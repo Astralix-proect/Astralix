@@ -3,148 +3,170 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>𝑨𝒔𝒕𝒓𝒂𝒍𝒊𝒙 — Next-Gen Minecraft Server</title>
+    
+    <!-- SEO Ключевые слова для поиска -->
+    <title>Astralix — сервер по маинкрафту с модом Create | Официальный сайт</title>
+    <meta name="description" content="Astralix — это уникальный сервер по маинкрафту с модом Create и Aeronautics! Автоматизация, инженерия, дирижабли и комфортное выживание на NeoForge 1.21.1.">
+    <meta name="keywords" content="Astralix, Astralix сервер по маинкрафту с модом Create, майнкрафт сервер с модом create, create aeronautics minecraft server, minecraft neoforge 1.21.1 create">
+
+    <!-- Иконка сайта (Favicon) -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
+
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- Фоновое неоновое свечение -->
-    <div class="glow-bg">
-        <div class="blob blob-1"></div>
-        <div class="blob blob-2"></div>
-    </div>
-
-    <!-- Шапка -->
+    <!-- Верхняя шапка / Навигация -->
     <header class="navbar">
-        <div class="container nav-container">
-            <a href="#" class="brand">𝑨𝒔𝒕𝒓𝒂𝒍𝒊𝒙</a>
+        <div class="nav-container">
+            <div class="online-indicator">
+                <span class="dot"></span> <strong>0</strong> игроков онлайн
+            </div>
             <nav class="nav-menu">
-                <a href="#about">О проекте</a>
-                <a href="#directions">Направления</a>
-                <a href="#features">Особенности</a>
+                <a href="#" class="active">🏠 Главная</a>
+                <a href="#servers">💻 Сервера</a>
+                <a href="https://discord.gg/NEcNGfysbB" target="_blank">🎮 Начать играть</a>
+                <a href="#">📜 Правила</a>
+                <a href="#">📊 ТОП игроков</a>
+                <a href="#" class="btn-donate">🎁 Донат</a>
+                <a href="#">❓ ЧаВо</a>
             </nav>
-            <a href="https://discord.gg/NEcNGfysbB" target="_blank" class="btn btn-discord">
-                <svg class="discord-icon" viewBox="0 0 127.14 96.36"><path fill="currentColor" d="M107.7 8.07A105.15 105.15 0 0 0 81.47 0a72.06 72.06 0 0 0-3.36 6.83 97.68 97.68 0 0 0-29.11 0A72.37 72.37 0 0 0 45.64 0a105.89 105.89 0 0 0-26.25 8.09C2.79 32.65-1.71 56.6.54 80.21a105.73 105.73 0 0 0 32.17 16.15 77.7 77.7 0 0 0 6.89-11.11 68.42 68.42 0 0 1-10.85-5.18c.91-.66 1.8-1.34 2.66-2a75.57 75.57 0 0 0 64.32 0c.87.71 1.76 1.39 2.66 2a68.68 68.68 0 0 1-10.87 5.19 77 77 0 0 0 6.89 11.1 105.25 105.25 0 0 0 32.19-16.14c2.64-27.38-4.51-51.11-18.91-72.14zM42.45 65.69c-6.32 0-11.5-5.81-11.5-12.92s5.07-12.92 11.5-12.92c6.48 0 11.6 5.89 11.5 12.92 0 7.11-5.02 12.92-11.5 12.92zm42.24 0c-6.32 0-11.5-5.81-11.5-12.92s5.07-12.92 11.5-12.92c6.48 0 11.6 5.89 11.5 12.92 0 7.11-5.02 12.92-11.5 12.92z"/></svg>
-                Присоединиться
-            </a>
+            <div class="user-cabinet">
+                <a href="https://discord.gg/NEcNGfysbB" target="_blank" class="btn-account">👤 Личный кабинет</a>
+            </div>
         </div>
     </header>
 
-    <!-- Главный баннер (Hero) -->
-    <section class="hero">
-        <div class="container hero-content">
-            <div class="badge-glow">
-                <span class="badge-dot"></span> Игровой сервер нового поколения
-            </div>
-            <h1 class="hero-title">Погрузись в мир <br><span class="gradient-text">𝑨𝒔𝒕𝒓𝒂𝒍𝒊𝒙</span></h1>
-            <p class="hero-subtitle">Сеть атмосферных Minecraft-серверов с уникальной инженерией, воздухоплаванием и дружным сообществом. Твой новый уровень игры начинаются здесь.</p>
-            <div class="hero-actions">
-                <a href="https://discord.gg/NEcNGfysbB" target="_blank" class="btn btn-primary btn-lg">
-                    <span>Начать играть</span>
-                    <div class="btn-glow"></div>
-                </a>
-                <a href="#directions" class="btn btn-glass btn-lg">Узнать больше</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- О проекте -->
-    <section id="about" class="section">
-        <div class="container">
-            <div class="glass-card about-card">
-                <h2 class="section-title">О проекте <span class="gradient-text">𝑨𝒔𝒕𝒓𝒂𝒍𝒊𝒙</span></h2>
-                <p class="section-desc">
-                    <strong>𝑨𝒔𝒕𝒓𝒂𝒍𝒊𝒙</strong> — это уютный игровой проект серверов Minecraft, где нет места шаблонам. Мы делаем упор на высококлассную сборку, идеальную оптимизацию и захватывающий геймплей без навязчивого Pay2Win.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Игровые направления -->
-    <section id="directions" class="section">
-        <div class="container">
-            <h2 class="section-title center">Игровые направления</h2>
-            <p class="section-subtitle center">Выбери стиль игры, который подходит именно тебе</p>
+    <!-- Главный блок (Hero Section) -->
+    <main class="main-container">
+        <section class="hero-section">
+            <h1 class="brand-title">ASTRALIX</h1>
+            <p class="hero-description">
+                Мы сделали этот проект, чтобы играть было по-настоящему уютно, а творческие и социальные идеи легко оживали.
+            </p>
             
-            <div class="cards-grid">
-                <!-- Create -->
-                <div class="glass-card interactive-card">
-                    <div class="card-icon-wrapper cyan">
-                        <span>⚙️</span>
+            <a href="https://discord.gg/NEcNGfysbB" target="_blank" class="btn-play-now">
+                🎮 Играть сейчас
+            </a>
+
+            <!-- Статистика -->
+            <div class="stats-container">
+                <div class="stat-box">
+                    <span class="stat-number">2</span>
+                    <span class="stat-label">Серверов</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-number">0</span>
+                    <span class="stat-label">Игроков онлайн</span>
+                </div>
+            </div>
+
+            <!-- Видеоплеер трейлера -->
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <video controls poster="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1000&auto=format&fit=crop">
+                        <source src="" type="video/mp4">
+                        Ваш браузер не поддерживает видео.
+                    </video>
+                </div>
+                <div class="video-footer">
+                    Трейлер сезона
+                </div>
+            </div>
+
+            <p class="section-invite">
+                Присоединяйтесь к нашим сервера́м! Играйте с друзьями, стройте эпические сооружения и исследуйте бескрайний мир.
+            </p>
+        </section>
+
+        <!-- Карточки серверов -->
+        <section id="servers" class="servers-grid">
+            
+            <!-- Карточка 1: Aeronautics -->
+            <div class="server-card">
+                <div class="ribbon ribbon-paid">ПЛАТНЫЙ</div>
+                <div class="card-banner" style="background-image: url('https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=600&auto=format&fit=crop');">
+                    <div class="card-icon-frame">
+                        <img src="favicon.png" alt="Aeronautics" onerror="this.style.display='none'">
                     </div>
-                    <h3 class="card-title">Create</h3>
-                    <p class="card-text">
-                        Инженерное направление, где твои идеи оживают. Проектируй заводы, прокладывай железные дороги, автоматизируй сложные цепочки производства и создавай невероятные механизмы.
-                    </p>
                 </div>
-
-                <!-- Aeronautics -->
-                <div class="glass-card interactive-card">
-                    <div class="card-icon-wrapper purple">
-                        <span>✈️</span>
+                <div class="card-body">
+                    <h2 class="server-title">Аэронавтика | Aeronautics</h2>
+                    <p class="server-desc">
+                        Create Aeronautics — это мод, которого ждали 5 лет, и он наконец вышел. По ощущениям это почти Scrap Mechanic в Minecraft.
+                    </p>
+                    <div class="tags-list">
+                        <span class="tag">⚙️ Create</span>
+                        <span class="tag">📷 Exposure</span>
+                        <span class="tag">✈️ Aeronautics</span>
                     </div>
-                    <h3 class="card-title">Aeronautics</h3>
-                    <p class="card-text">
-                        Эра полётов и открытий! Строй собственные дирижабли, самолёты и гигантские небесные станции. Исследуй бесскрайний мир с высоты птичьего полёта.
+                    <div class="server-info">
+                        <div class="info-row">
+                            <span>Онлайн:</span>
+                            <strong>0/40</strong>
+                        </div>
+                        <div class="info-row">
+                            <span>Версия:</span>
+                            <span class="version-badge">NeoForge 1.21.1</span>
+                        </div>
+                    </div>
+                    <a href="https://discord.gg/NEcNGfysbB" target="_blank" class="btn-more">Подробнее ➔</a>
+                </div>
+            </div>
+
+            <!-- Карточка 2: Create Industrial -->
+            <div class="server-card">
+                <div class="ribbon ribbon-free">БЕСПЛАТНЫЙ</div>
+                <div class="card-banner" style="background-image: url('https://images.unsplash.com/photo-1509198397868-475647b2a1e5?q=80&w=600&auto=format&fit=crop');">
+                    <div class="card-icon-frame">
+                        <img src="favicon.png" alt="Create Industrial" onerror="this.style.display='none'">
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h2 class="server-title">Инженерия | Create World</h2>
+                    <p class="server-desc">
+                        Настоящий сервер по маинкрафту с модом Create. Полноценная автоматизация, заводские комплексы, поезда, логистика и многоступенчатое производство.
                     </p>
+                    <div class="tags-list">
+                        <span class="tag">⚙️ Create</span>
+                        <span class="tag">🚂 Railways</span>
+                        <span class="tag">🏭 Automation</span>
+                    </div>
+                    <div class="server-info">
+                        <div class="info-row">
+                            <span>Онлайн:</span>
+                            <strong>0/50</strong>
+                        </div>
+                        <div class="info-row">
+                            <span>Версия:</span>
+                            <span class="version-badge">NeoForge 1.21.1</span>
+                        </div>
+                    </div>
+                    <a href="https://discord.gg/NEcNGfysbB" target="_blank" class="btn-more">Подробнее ➔</a>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Особенности -->
-    <section id="features" class="section">
-        <div class="container">
-            <h2 class="section-title center">Почему именно мы?</h2>
-            <div class="features-grid">
-                <div class="glass-card feature-box">
-                    <div class="feature-icon">🚀</div>
-                    <h3>Идеальный FPS</h3>
-                    <p>Сервер оптимизирован до мелочей для плавного геймплея без лагов.</p>
-                </div>
-                <div class="glass-card feature-box">
-                    <div class="feature-icon">🎙️</div>
-                    <h3>Голосовой чат</h3>
-                    <p>Общайся с друзьями прямо в игре благодаря объемному позиционируемому звуку.</p>
-                </div>
-                <div class="glass-card feature-box">
-                    <div class="feature-icon">🛡️</div>
-                    <h3>Полная безопасность</h3>
-                    <p>Надежная система приватов и защиты твоих построек и ресурсов.</p>
-                </div>
-                <div class="glass-card feature-box">
-                    <div class="feature-icon">👑</div>
-                    <h3>Адекватная комьюнити</h3>
-                    <p>Отзывчивая администрация и игроки, всегда готовые прийти на помощь.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Баннер Discord -->
-    <section class="section">
-        <div class="container">
-            <div class="glass-card discord-banner">
-                <div class="discord-banner-content">
-                    <h2>Готов начать приключение?</h2>
-                    <p>Заходи в наш Discord — там ты найдешь IP-адрес сервера, актуальный лаунчер и наше комьюнити!</p>
-                </div>
-                <a href="https://discord.gg/NEcNGfysbB" target="_blank" class="btn btn-discord btn-lg">
-                    Войти в Discord
-                </a>
-            </div>
+        <!-- Баннер рейтинга Millida -->
+        <div class="millida-banner-wrapper">
+            <a href="https://millida.net/rating/servers/create-aeronautics-2" target="_blank" rel="noopener">
+                <img src="https://millida.net/rating/servers/create-aeronautics-2/banner.svg" alt="Create Aeronautics — рейтинг серверов Minecraft на Millida" width="340" height="74">
+            </a>
         </div>
-    </section>
+    </main>
 
-    <!-- Подвал -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 <span class="gradient-text">𝑨𝒔𝒕𝒓𝒂𝒍𝒊𝒙</span>. Все права защищены.</p>
-            <p class="sub-text">Проект не связан с Mojang AB.</p>
-        </div>
+    <!-- Плавающая кнопка Поддержка -->
+    <a href="https://discord.gg/NEcNGfysbB" target="_blank" class="floating-support">
+        💬 ПОДДЕРЖКА
+    </a>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Astralix. Все права защищены. Сайт не связан с Mojang AB.</p>
     </footer>
 
 </body>
