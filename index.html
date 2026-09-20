@@ -3,13 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>𝑨𝒔𝒕𝒓𝒂𝒍𝒊𝒙 — Сеть атмосферных Minecraft-серверов</title>
+    <title>𝑨𝒔𝒕𝒓𝒂𝒍𝒊𝒙 — Next-Gen Minecraft Server</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
+
+    <!-- Фоновое неоновое свечение -->
+    <div class="glow-bg">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
 
     <!-- Шапка -->
     <header class="navbar">
@@ -19,21 +25,28 @@
                 <a href="#about">О проекте</a>
                 <a href="#directions">Направления</a>
                 <a href="#features">Особенности</a>
-                <a href="#links">Ссылки</a>
             </nav>
-            <a href="https://discord.gg" target="_blank" class="btn btn-discord">Discord</a>
+            <a href="https://discord.gg/NEcNGfysbB" target="_blank" class="btn btn-discord">
+                <svg class="discord-icon" viewBox="0 0 127.14 96.36"><path fill="currentColor" d="M107.7 8.07A105.15 105.15 0 0 0 81.47 0a72.06 72.06 0 0 0-3.36 6.83 97.68 97.68 0 0 0-29.11 0A72.37 72.37 0 0 0 45.64 0a105.89 105.89 0 0 0-26.25 8.09C2.79 32.65-1.71 56.6.54 80.21a105.73 105.73 0 0 0 32.17 16.15 77.7 77.7 0 0 0 6.89-11.11 68.42 68.42 0 0 1-10.85-5.18c.91-.66 1.8-1.34 2.66-2a75.57 75.57 0 0 0 64.32 0c.87.71 1.76 1.39 2.66 2a68.68 68.68 0 0 1-10.87 5.19 77 77 0 0 0 6.89 11.1 105.25 105.25 0 0 0 32.19-16.14c2.64-27.38-4.51-51.11-18.91-72.14zM42.45 65.69c-6.32 0-11.5-5.81-11.5-12.92s5.07-12.92 11.5-12.92c6.48 0 11.6 5.89 11.5 12.92 0 7.11-5.02 12.92-11.5 12.92zm42.24 0c-6.32 0-11.5-5.81-11.5-12.92s5.07-12.92 11.5-12.92c6.48 0 11.6 5.89 11.5 12.92 0 7.11-5.02 12.92-11.5 12.92z"/></svg>
+                Присоединиться
+            </a>
         </div>
     </header>
 
-    <!-- Главный баннер -->
+    <!-- Главный баннер (Hero) -->
     <section class="hero">
         <div class="container hero-content">
-            <div class="badge">Проект, о котором вы будете вспоминать</div>
-            <h1>Добро пожаловать на <span class="accent-text">𝑨𝒔𝒕𝒓𝒂𝒍𝒊𝒙</span></h1>
-            <p>Сеть атмосферных Minecraft-серверов для тех, кому хочется большего, чем обычное выживание. Игра только через собственный лаунчер.</p>
+            <div class="badge-glow">
+                <span class="badge-dot"></span> Игровой сервер нового поколения
+            </div>
+            <h1 class="hero-title">Погрузись в мир <br><span class="gradient-text">𝑨𝒔𝒕𝒓𝒂𝒍𝒊𝒙</span></h1>
+            <p class="hero-subtitle">Сеть атмосферных Minecraft-серверов с уникальной инженерией, воздухоплаванием и дружным сообществом. Твой новый уровень игры начинаются здесь.</p>
             <div class="hero-actions">
-                <a href="https://discord.gg" target="_blank" class="btn btn-primary">Скачать лаунчер</a>
-                <a href="#directions" class="btn btn-secondary">Наши направления</a>
+                <a href="https://discord.gg/NEcNGfysbB" target="_blank" class="btn btn-primary btn-lg">
+                    <span>Начать играть</span>
+                    <div class="btn-glow"></div>
+                </a>
+                <a href="#directions" class="btn btn-glass btn-lg">Узнать больше</a>
             </div>
         </div>
     </section>
@@ -41,79 +54,87 @@
     <!-- О проекте -->
     <section id="about" class="section">
         <div class="container">
-            <h2 class="section-title">О проекте 𝑨𝒔𝒕𝒓𝒂𝒍𝒊𝒙</h2>
-            <p class="section-desc">
-                <strong>𝑨𝒔𝒕𝒓𝒂𝒍𝒊𝒙</strong> — это ламповый игровой проект серверов Minecraft, ориентированный на комфортное выживание игроков без упора на систему Pay2Win. Мы создаем уникальные миры с упором на детали, инженерию и командную игру.
-            </p>
+            <div class="glass-card about-card">
+                <h2 class="section-title">О проекте <span class="gradient-text">𝑨𝒔𝒕𝒓𝒂𝒍𝒊𝒙</span></h2>
+                <p class="section-desc">
+                    <strong>𝑨𝒔𝒕𝒓𝒂𝒍𝒊𝒙</strong> — это уютный игровой проект серверов Minecraft, где нет места шаблонам. Мы делаем упор на высококлассную сборку, идеальную оптимизацию и захватывающий геймплей без навязчивого Pay2Win.
+                </p>
+            </div>
         </div>
     </section>
 
-    <!-- Игровые направления (без TerraFirmaCraft) -->
-    <section id="directions" class="section bg-alt">
+    <!-- Игровые направления -->
+    <section id="directions" class="section">
         <div class="container">
-            <h2 class="section-title">Игровые направления</h2>
+            <h2 class="section-title center">Игровые направления</h2>
+            <p class="section-subtitle center">Выбери стиль игры, который подходит именно тебе</p>
+            
             <div class="cards-grid">
-                
                 <!-- Create -->
-                <div class="card">
-                    <div class="card-icon">⚙️</div>
+                <div class="glass-card interactive-card">
+                    <div class="card-icon-wrapper cyan">
+                        <span>⚙️</span>
+                    </div>
                     <h3 class="card-title">Create</h3>
                     <p class="card-text">
-                        Сервер, построенный вокруг механизмов, автоматизации и инженерии. Создавайте производственные линии, сложные механизмы, поезда и огромные заводы, постепенно развивая собственную индустрию.
+                        Инженерное направление, где твои идеи оживают. Проектируй заводы, прокладывай железные дороги, автоматизируй сложные цепочки производства и создавай невероятные механизмы.
                     </p>
                 </div>
 
                 <!-- Aeronautics -->
-                <div class="card">
-                    <div class="card-icon">✈️</div>
+                <div class="glass-card interactive-card">
+                    <div class="card-icon-wrapper purple">
+                        <span>✈️</span>
+                    </div>
                     <h3 class="card-title">Aeronautics</h3>
                     <p class="card-text">
-                        Направление для любителей техники, транспорта и полётов. Стройте собственные летательные аппараты, экспериментируйте с конструкциями и исследуйте мир не только с земли, но и с воздуха.
+                        Эра полётов и открытий! Строй собственные дирижабли, самолёты и гигантские небесные станции. Исследуй бесскрайний мир с высоты птичьего полёта.
                     </p>
                 </div>
-
             </div>
         </div>
     </section>
 
-    <!-- Особенности сервера -->
+    <!-- Особенности -->
     <section id="features" class="section">
         <div class="container">
-            <h2 class="section-title">Особенности проекта</h2>
+            <h2 class="section-title center">Почему именно мы?</h2>
             <div class="features-grid">
-                <div class="feature-item">
-                    <span class="feature-tag">Выживание</span>
-                    <h3>Комфортный геймплей</h3>
-                    <p>Проработанный баланс и отсутствие лишнего мусора для чистого игрового процесса.</p>
+                <div class="glass-card feature-box">
+                    <div class="feature-icon">🚀</div>
+                    <h3>Идеальный FPS</h3>
+                    <p>Сервер оптимизирован до мелочей для плавного геймплея без лагов.</p>
                 </div>
-                <div class="feature-item">
-                    <span class="feature-tag">Сообщество</span>
-                    <h3>Кланы и союзы</h3>
-                    <p>Объединяйтесь с другими игроками, стройте клановые базы и развивайте свои территории.</p>
-                </div>
-                <div class="feature-item">
-                    <span class="feature-tag">Общение</span>
+                <div class="glass-card feature-box">
+                    <div class="feature-icon">🎙️</div>
                     <h3>Голосовой чат</h3>
-                    <p>Встроенный позиционируемый голосовой чат для удобного общения прямо в игре.</p>
+                    <p>Общайся с друзьями прямо в игре благодаря объемному позиционируемому звуку.</p>
                 </div>
-                <div class="feature-item">
-                    <span class="feature-tag">Атмосфера</span>
-                    <h3>Средневековье и Техника</h3>
-                    <p>Уникальное сочетание эстетики и продвинутых инженерных систем.</p>
+                <div class="glass-card feature-box">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Полная безопасность</h3>
+                    <p>Надежная система приватов и защиты твоих построек и ресурсов.</p>
+                </div>
+                <div class="glass-card feature-box">
+                    <div class="feature-icon">👑</div>
+                    <h3>Адекватная комьюнити</h3>
+                    <p>Отзывчивая администрация и игроки, всегда готовые прийти на помощь.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Соцсети и ссылки -->
-    <section id="links" class="section bg-alt">
+    <!-- Баннер Discord -->
+    <section class="section">
         <div class="container">
-            <h2 class="section-title">Присоединяйтесь к 𝑨𝒔𝒕𝒓𝒂𝒍𝒊𝒙</h2>
-            <p class="section-desc">Следите за новостями и общайтесь с игроками на наших официальных площадках:</p>
-            <div class="social-links">
-                <a href="https://discord.gg" target="_blank" class="social-btn discord">Discord</a>
-                <a href="https://t.me" target="_blank" class="social-btn telegram">Telegram</a>
-                <a href="https://vk.com" target="_blank" class="social-btn vk">ВКонтакте</a>
+            <div class="glass-card discord-banner">
+                <div class="discord-banner-content">
+                    <h2>Готов начать приключение?</h2>
+                    <p>Заходи в наш Discord — там ты найдешь IP-адрес сервера, актуальный лаунчер и наше комьюнити!</p>
+                </div>
+                <a href="https://discord.gg/NEcNGfysbB" target="_blank" class="btn btn-discord btn-lg">
+                    Войти в Discord
+                </a>
             </div>
         </div>
     </section>
@@ -121,8 +142,8 @@
     <!-- Подвал -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2026 𝑨𝒔𝒕𝒓𝒂𝒍𝒊𝒙 — Официальный сайт проекта. Все права защищены.</p>
-            <p class="sub-text">Сайт никак не связан с компанией Mojang AB.</p>
+            <p>&copy; 2026 <span class="gradient-text">𝑨𝒔𝒕𝒓𝒂𝒍𝒊𝒙</span>. Все права защищены.</p>
+            <p class="sub-text">Проект не связан с Mojang AB.</p>
         </div>
     </footer>
 
