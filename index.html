@@ -7,8 +7,10 @@
     <title>Astralix — сервер по маинкрафту с модом Create | Официальный сайт</title>
     <meta name="description" content="Astralix — уникальный сервер по маинкрафту с модом Create Aeronautics! Автоматизация, дирижабли и комфортное выживание.">
 
-    <link rel="icon" type="image/png" href="favicon.png">
-    <link rel="apple-touch-icon" href="favicon.png">
+    <!-- Иконка сайта (Favicon) -->
+    <link rel="icon" type="image/png" href="./favicon.png">
+    <link rel="shortcut icon" type="image/png" href="./favicon.png">
+    <link rel="apple-touch-icon" href="./favicon.png">
 
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -74,7 +76,7 @@
                     <div class="ribbon">ОФИЦИАЛЬНЫЙ</div>
                     <div class="card-banner" style="background-image: url('https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=800&auto=format&fit=crop');">
                         <div class="card-icon-frame">
-                            <img src="favicon.png" alt="Astralix Logo">
+                            <img src="./favicon.png" alt="Astralix Logo" onerror="this.src='https://via.placeholder.com/70/130d24/c084fc?text=A'">
                         </div>
                     </div>
                     <div class="card-body">
@@ -92,6 +94,10 @@
                             <div class="info-row">
                                 <span>Онлайн:</span>
                                 <strong id="card-online-text">Проверка...</strong>
+                            </div>
+                            <div class="info-row">
+                                <span>IP Адрес:</span>
+                                <strong class="ip-address" onclick="copyIp()" title="Нажмите, чтобы скопировать">Astralix.minerent.io 📋</strong>
                             </div>
                             <div class="info-row">
                                 <span>Версия ядра:</span>
@@ -139,7 +145,7 @@
                     <li><strong>[1.4]</strong> Запрещено распространение ложной информации.</li>
                     <li><strong>[1.5]</strong> Запрещена реклама (в том числе в личных сообщениях).</li>
                     <li><strong>[1.6]</strong> Запрещено использование нескольких аккаунтов (твинков).</li>
-                    <li><strong>[1.7]</strong> Запрещена публикация личной информации о человеке без его согласия.</li>
+                    <li><strong>[1.7]</strong> Запрещена публикация личной информации о человеку без его согласия.</li>
                     <li><strong>[1.8]</strong> Запрещено выдавать себя за другого человека или администрацию.</li>
                     <li><strong>[1.9]</strong> Запрещено препятствование работе администрации.</li>
                     <li><strong>[1.10]</strong> Правила распространяются на все каналы сервера и ЛС между участниками.</li>
@@ -195,8 +201,11 @@
             <button class="modal-close" onclick="closeModal('play-modal')">✕</button>
             <h2 class="modal-title">🎮 Как начать играть на Astralix</h2>
             <div class="modal-body text-center">
-                <p style="margin-bottom: 20px; color: var(--text-secondary);">
-                    Все авторизации, скачивание лаунчера и проходки происходят через наше Discord сообщество!
+                <p style="margin-bottom: 15px; color: var(--text-secondary);">
+                    IP адрес сервера:<br><strong style="color: #c084fc; font-size: 1.2rem;">Astralix.minerent.io</strong>
+                </p>
+                <p style="margin-bottom: 20px; color: var(--text-muted); font-size: 0.85rem;">
+                    Все авторизации, сборки модов и доступ происходят через наше Discord сообщество!
                 </p>
                 <a href="https://discord.gg/NEcNGfysbB" target="_blank" class="btn-play-now" style="display:block; text-align:center;">
                     Присоединиться к Discord
@@ -211,9 +220,9 @@
             <button class="modal-close" onclick="closeModal('faq-modal')">✕</button>
             <h2 class="modal-title">❓ Часто задаваемые вопросы</h2>
             <div class="modal-body">
-                <p><strong>Какой IP у сервера?</strong><br>IP доступен в нашем Discord канале после получения роли.</p><br>
-                <p><strong>Нужна ли лицензия?</strong><br>Играть можно как с лицензии, так и через наш официальный лаунчер.</p><br>
-                <p><strong>Какая версия сборки?</strong><br>Моды работают на NeoForge 1.21.1 с модами Create & Aeronautics.</p>
+                <p><strong>Какой IP у сервера?</strong><br><code style="color: #c084fc;">Astralix.minerent.io</code></p><br>
+                <p><strong>Нужна ли лицензия?</strong><br>Играть можно как с лицензии, так и через наш лаунчер из Discord.</p><br>
+                <p><strong>Какая версия сборки?</strong><br>Сборка работает на NeoForge 1.21.1 (Create & Aeronautics).</p>
             </div>
         </div>
     </div>
@@ -238,7 +247,7 @@
         <p>&copy; 2026 Astralix. Все права защищены. Сайт не связан с Mojang AB.</p>
     </footer>
 
-    <!-- Скрипт проверок и окон -->
+    <!-- Скрипт проверок и копирования IP -->
     <script>
         function openModal(id) {
             document.getElementById(id).classList.add('active');
@@ -248,29 +257,36 @@
             document.getElementById(id).classList.remove('active');
         }
 
+        function copyIp() {
+            navigator.clipboard.writeText("Astralix.minerent.io");
+            alert("IP адрес Astralix.minerent.io скопирован!");
+        }
+
         window.onclick = function(e) {
             if (e.target.classList.contains('modal-overlay')) {
                 e.target.classList.remove('active');
             }
         }
 
-        // Автоматическая проверка статуса через Millida
-        async function fetchMillidaStatus() {
+        // Автоматическая проверка статуса сервера по IP через mcstatus.io API
+        async function checkServerStatus() {
             const topOnlineDot = document.getElementById('top-online-dot');
             const topOnlineText = document.getElementById('top-online-text');
             const heroOnlineCount = document.getElementById('hero-online-count');
             const heroOnlineLabel = document.getElementById('hero-online-label');
             const cardOnlineText = document.getElementById('card-online-text');
 
+            const serverIp = "Astralix.minerent.io";
+
             try {
-                const response = await fetch('https://millida.net/api/v1/servers/create-aeronautics-2');
+                const response = await fetch(`https://api.mcstatus.io/v2/status/java/${serverIp}`);
                 
-                if (!response.ok) throw new Error('Ошибка сети');
+                if (!response.ok) throw new Error('Ошибка связи с API');
                 const data = await response.json();
 
-                if (data && data.status === 'online') {
-                    const online = data.online !== undefined ? data.online : 0;
-                    const maxOnline = data.max_online || 50;
+                if (data && data.online === true) {
+                    const online = data.players ? data.players.online : 0;
+                    const maxOnline = data.players ? data.players.max : 50;
 
                     topOnlineDot.classList.remove('offline');
                     topOnlineText.textContent = `${online} игроков онлайн`;
@@ -293,8 +309,8 @@
             }
         }
 
-        fetchMillidaStatus();
-        setInterval(fetchMillidaStatus, 30000);
+        checkServerStatus();
+        setInterval(checkServerStatus, 20000); // Опрос каждые 20 секунд
     </script>
 </body>
 </html>
