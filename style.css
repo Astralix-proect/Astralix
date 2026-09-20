@@ -638,6 +638,150 @@ body {
     text-align: center;
 }
 
+/* Элементы Авторизации и Личного Кабинета */
+.auth-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.auth-tab {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--card-border);
+    color: var(--text-secondary);
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.auth-tab.active {
+    background: var(--accent-purple);
+    color: white;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    text-align: left;
+}
+
+.form-group label {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.form-group input, .input-inline input {
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--card-border);
+    padding: 10px 14px;
+    border-radius: 8px;
+    color: white;
+    outline: none;
+    font-size: 0.9rem;
+}
+
+.form-group input:focus, .input-inline input:focus {
+    border-color: var(--accent-purple);
+}
+
+.form-error {
+    color: #ef4444;
+    font-size: 0.85rem;
+    text-align: center;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.profile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--card-border);
+    padding-bottom: 12px;
+}
+
+.btn-logout {
+    background: rgba(239, 68, 68, 0.2);
+    border: 1px solid #ef4444;
+    color: #ef4444;
+    padding: 6px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.btn-logout:hover {
+    background: #ef4444;
+    color: white;
+}
+
+.profile-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.card-section {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 14px;
+    border-radius: 12px;
+    margin-bottom: 14px;
+    text-align: left;
+}
+
+.card-section h3, .profile-skin h3 {
+    font-size: 1rem;
+    color: #c084fc;
+    margin-bottom: 10px;
+}
+
+.input-inline {
+    display: flex;
+    gap: 8px;
+}
+
+.input-inline input {
+    flex: 1;
+}
+
+.status-text {
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+}
+
+.skin-preview-box {
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px dashed var(--card-border);
+    border-radius: 12px;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 14px;
+}
+
+.skin-preview-box img {
+    height: 160px;
+    object-fit: contain;
+}
+
 /* Мобильная адаптивность */
 @media (max-width: 768px) {
     .brand-title {
@@ -666,5 +810,9 @@ body {
 
     .slider-viewport {
         height: 260px;
+    }
+
+    .profile-grid {
+        grid-template-columns: 1fr;
     }
 }
