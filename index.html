@@ -17,77 +17,64 @@
 </head>
 <body>
 
+    <!-- Неоновый задний фон -->
     <div class="glow-bg">
         <div class="blob blob-1"></div>
         <div class="blob blob-2"></div>
     </div>
 
+    <!-- Шапка / Навигация -->
     <header class="navbar">
         <div class="nav-container">
-            <div class="online-indicator">
-                <span class="dot"></span> <strong>15</strong> игроков онлайн
+            <div class="online-indicator" id="top-online-container">
+                <span class="dot" id="top-online-dot"></span> <span id="top-online-text">Проверка статуса...</span>
             </div>
             <nav class="nav-menu">
-                <button class="nav-btn active" onclick="switchTab('main')">🏠 Главная</button>
-                <button class="nav-btn" onclick="switchTab('servers')">💻 Сервера</button>
+                <button class="nav-btn active">🏠 Главная</button>
                 <button class="nav-btn" onclick="openModal('play-modal')">🎮 Начать играть</button>
                 <button class="nav-btn" onclick="openModal('rules-modal')">📜 Правила</button>
                 <button class="nav-btn" onclick="openModal('faq-modal')">❓ ЧаВо</button>
                 <button class="nav-btn btn-donate" onclick="openModal('donate-modal')">🎁 Донат</button>
             </nav>
-            <div class="user-cabinet">
-                <button class="btn-account" onclick="openModal('play-modal')">👤 Личный кабинет</button>
-            </div>
         </div>
     </header>
 
+    <!-- Основной контент -->
     <main class="main-container">
         
-        <div id="tab-main" class="tab-content active">
-            <section class="hero-section">
-                <div class="badge-glow">
-                    <span class="badge-dot"></span> Игровой сервер нового поколения
-                </div>
-                <h1 class="brand-title">ASTRALIX</h1>
-                <p class="hero-description">
-                    Мы сделали этот проект, чтобы играть было по-настоящему уютно, а творческие и инженерные идеи легко оживали.
-                </p>
-                
-                <div class="hero-actions">
-                    <button class="btn-play-now" onclick="openModal('play-modal')">🎮 Начать играть</button>
-                    <button class="btn-secondary-action" onclick="openModal('rules-modal')">📜 Изучить правила</button>
-                </div>
+        <section class="hero-section">
+            <div class="badge-glow">
+                <span class="badge-dot"></span> Игровой сервер нового поколения
+            </div>
+            <h1 class="brand-title">ASTRALIX</h1>
+            <p class="hero-description">
+                Мы сделали этот проект, чтобы играть было по-настоящему уютно, а творческие и инженерные идеи легко оживали.
+            </p>
+            
+            <div class="hero-actions">
+                <button class="btn-play-now" onclick="openModal('play-modal')">🎮 Начать играть</button>
+                <button class="btn-secondary-action" onclick="openModal('rules-modal')">📜 Изучить правила</button>
+            </div>
 
-                <div class="stats-container">
-                    <div class="stat-box">
-                        <span class="stat-number">1</span>
-                        <span class="stat-label">Сервер</span>
-                    </div>
-                    <div class="stat-box">
-                        <span class="stat-number">15</span>
-                        <span class="stat-label">Игроков онлайн</span>
-                    </div>
+            <!-- Статистика -->
+            <div class="stats-container">
+                <div class="stat-box">
+                    <span class="stat-number">1</span>
+                    <span class="stat-label">Сервер</span>
                 </div>
-
-                <div class="video-card">
-                    <div class="video-wrapper">
-                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Трейлер" allowfullscreen></iframe>
-                    </div>
-                    <div class="video-footer">
-                        🎬 Трейлер сезона Astralix
-                    </div>
+                <div class="stat-box">
+                    <span class="stat-number" id="hero-online-count">--</span>
+                    <span class="stat-label" id="hero-online-label">Игроков онлайн</span>
                 </div>
-            </section>
-        </div>
+            </div>
 
-        <div id="tab-servers" class="tab-content">
-            <h2 class="section-heading">Наш сервер</h2>
-            <section class="servers-grid">
+            <!-- Карточка сервера на главной -->
+            <div class="server-card-main">
                 <div class="server-card">
-                    <div class="ribbon ribbon-paid">ОФИЦИАЛЬНЫЙ</div>
+                    <div class="ribbon">ОФИЦИАЛЬНЫЙ</div>
                     <div class="card-banner" style="background-image: url('https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=800&auto=format&fit=crop');">
                         <div class="card-icon-frame">
-                            <img src="favicon.png" alt="Astralix Logo" onerror="this.src='https://via.placeholder.com/60'">
+                            <img src="favicon.png" alt="Astralix Logo">
                         </div>
                     </div>
                     <div class="card-body">
@@ -104,7 +91,7 @@
                         <div class="server-info">
                             <div class="info-row">
                                 <span>Онлайн:</span>
-                                <strong>15 / 50 игроков</strong>
+                                <strong id="card-online-text">Проверка...</strong>
                             </div>
                             <div class="info-row">
                                 <span>Версия ядра:</span>
@@ -114,20 +101,29 @@
                         <button class="btn-more" onclick="openModal('play-modal')">Присоединиться к серверу ➔</button>
                     </div>
                 </div>
-            </section>
-        </div>
+            </div>
 
-        <div class="millida-banner-wrapper">
-            <a href="https://millida.net/rating/servers/create-aeronautics-2" target="_blank" rel="noopener">
-                <img src="https://millida.net/rating/servers/create-aeronautics-2/banner.svg" alt="Create Aeronautics — рейтинг серверов Minecraft на Millida" width="340" height="74">
-            </a>
-        </div>
+            <!-- Трейлер -->
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Трейлер" allowfullscreen></iframe>
+                </div>
+                <div class="video-footer">
+                    🎬 Трейлер сезона Astralix
+                </div>
+            </div>
+        </section>
+
     </main>
 
+    <!-- Плавающая кнопка Поддержка -->
     <a href="https://discord.gg/NEcNGfysbB" target="_blank" class="floating-support">
         💬 ПОДДЕРЖКА В DISCORD
     </a>
 
+    <!-- ВСПЛЫВАЮЩИЕ МОДАЛЬНЫЕ ОКНА -->
+
+    <!-- Модалка: Правила -->
     <div id="rules-modal" class="modal-overlay">
         <div class="modal-card modal-large">
             <button class="modal-close" onclick="closeModal('rules-modal')">✕</button>
@@ -143,7 +139,7 @@
                     <li><strong>[1.4]</strong> Запрещено распространение ложной информации.</li>
                     <li><strong>[1.5]</strong> Запрещена реклама (в том числе в личных сообщениях).</li>
                     <li><strong>[1.6]</strong> Запрещено использование нескольких аккаунтов (твинков).</li>
-                    <li><strong>[1.7]</strong> Запрещена публикация личной информации о человекe без его согласия.</li>
+                    <li><strong>[1.7]</strong> Запрещена публикация личной информации о человеке без его согласия.</li>
                     <li><strong>[1.8]</strong> Запрещено выдавать себя за другого человека или администрацию.</li>
                     <li><strong>[1.9]</strong> Запрещено препятствование работе администрации.</li>
                     <li><strong>[1.10]</strong> Правила распространяются на все каналы сервера и ЛС между участниками.</li>
@@ -193,6 +189,7 @@
         </div>
     </div>
 
+    <!-- Модалка: Как начать играть -->
     <div id="play-modal" class="modal-overlay">
         <div class="modal-card">
             <button class="modal-close" onclick="closeModal('play-modal')">✕</button>
@@ -208,6 +205,7 @@
         </div>
     </div>
 
+    <!-- Модалка: ЧаВо -->
     <div id="faq-modal" class="modal-overlay">
         <div class="modal-card">
             <button class="modal-close" onclick="closeModal('faq-modal')">✕</button>
@@ -220,6 +218,7 @@
         </div>
     </div>
 
+    <!-- Модалка: Донат -->
     <div id="donate-modal" class="modal-overlay">
         <div class="modal-card">
             <button class="modal-close" onclick="closeModal('donate-modal')">✕</button>
@@ -239,15 +238,8 @@
         <p>&copy; 2026 Astralix. Все права защищены. Сайт не связан с Mojang AB.</p>
     </footer>
 
+    <!-- Скрипт проверок и окон -->
     <script>
-        function switchTab(tabName) {
-            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
-            document.querySelectorAll('.nav-btn').forEach(el => el.classList.remove('active'));
-            
-            document.getElementById('tab-' + tabName).classList.add('active');
-            event.currentTarget.classList.add('active');
-        }
-
         function openModal(id) {
             document.getElementById(id).classList.add('active');
         }
@@ -256,12 +248,53 @@
             document.getElementById(id).classList.remove('active');
         }
 
-        // Закрытие по клику на фон
         window.onclick = function(e) {
             if (e.target.classList.contains('modal-overlay')) {
                 e.target.classList.remove('active');
             }
         }
+
+        // Автоматическая проверка статуса через Millida
+        async function fetchMillidaStatus() {
+            const topOnlineDot = document.getElementById('top-online-dot');
+            const topOnlineText = document.getElementById('top-online-text');
+            const heroOnlineCount = document.getElementById('hero-online-count');
+            const heroOnlineLabel = document.getElementById('hero-online-label');
+            const cardOnlineText = document.getElementById('card-online-text');
+
+            try {
+                const response = await fetch('https://millida.net/api/v1/servers/create-aeronautics-2');
+                
+                if (!response.ok) throw new Error('Ошибка сети');
+                const data = await response.json();
+
+                if (data && data.status === 'online') {
+                    const online = data.online !== undefined ? data.online : 0;
+                    const maxOnline = data.max_online || 50;
+
+                    topOnlineDot.classList.remove('offline');
+                    topOnlineText.textContent = `${online} игроков онлайн`;
+                    heroOnlineCount.textContent = online;
+                    heroOnlineLabel.textContent = 'Игроков онлайн';
+                    cardOnlineText.textContent = `${online} / ${maxOnline} игроков`;
+                } else {
+                    setOffline();
+                }
+            } catch (err) {
+                setOffline();
+            }
+
+            function setOffline() {
+                topOnlineDot.classList.add('offline');
+                topOnlineText.textContent = 'Сервер оффлайн';
+                heroOnlineCount.textContent = 'ОФФЛАЙН';
+                heroOnlineLabel.textContent = 'Статус сервера';
+                cardOnlineText.textContent = 'Сервер оффлайн';
+            }
+        }
+
+        fetchMillidaStatus();
+        setInterval(fetchMillidaStatus, 30000);
     </script>
 </body>
 </html>
