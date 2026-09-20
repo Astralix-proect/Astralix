@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Astralix — сервер по маинкрафту с модом Create</title>
+    <title>Astralix — сервер по маинкрафту с модом Create | Официальный сайт</title>
     <meta name="description" content="Astralix — уникальный сервер по маинкрафту с модом Create Aeronautics! Автоматизация, дирижабли и комфортное выживание.">
 
     <!-- Иконка сайта (Favicon) -->
@@ -142,7 +142,7 @@
 
     </main>
 
-    <!-- Плавающая кнопка Поддержка с прямой ссылкой в Discord -->
+    <!-- Плавающая кнопка Поддержка -->
     <a href="https://discord.com/channels/1542504877228425296/1548026906132349029" target="_blank" class="floating-support">
         💬 ПОДДЕРЖКА В DISCORD
     </a>
@@ -262,17 +262,99 @@
 
     <!-- Модалка: Личный кабинет -->
     <div id="account-modal" class="modal-overlay">
-        <div class="modal-card">
+        <div class="modal-card modal-large">
             <button class="modal-close" onclick="closeModal('account-modal')">✕</button>
-            <h2 class="modal-title">👤 Личный кабинет</h2>
-            <div class="modal-body text-center">
-                <p style="color: var(--text-secondary); margin-bottom: 20px;">
-                    Авторизация происходит через официальный Discord бот Astralix.
-                </p>
-                <a href="https://discord.com/channels/1542504877228425296/1548026906132349029" target="_blank" class="btn-play-now" style="display:block;">
-                    Войти через Discord
-                </a>
+            
+            <!-- Переключатель форм Логин / Регистрация -->
+            <div id="auth-box">
+                <div class="auth-tabs">
+                    <button class="auth-tab active" id="tab-login" onclick="switchAuthTab('login')">Логин</button>
+                    <button class="auth-tab" id="tab-register" onclick="switchAuthTab('register')">Регистрация</button>
+                </div>
+
+                <!-- Форма Логина -->
+                <form id="form-login" onsubmit="handleLogin(event)" class="auth-form">
+                    <h2 class="modal-title text-center">Вход в аккаунт</h2>
+                    <div class="form-group">
+                        <label>Никнейм</label>
+                        <input type="text" id="login-username" placeholder="Введите ваш ник" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Пароль</label>
+                        <input type="password" id="login-password" placeholder="Введите пароль" required>
+                    </div>
+                    <div id="login-error" class="form-error"></div>
+                    <button type="submit" class="btn-play-now w-100">Войти</button>
+                </form>
+
+                <!-- Форма Регистрации -->
+                <form id="form-register" onsubmit="handleRegister(event)" class="auth-form hidden">
+                    <h2 class="modal-title text-center">Создать аккаунт</h2>
+                    <div class="form-group">
+                        <label>Никнейм</label>
+                        <input type="text" id="reg-username" placeholder="Придумайте ник" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Пароль</label>
+                        <input type="password" id="reg-password" placeholder="Придумайте пароль" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Подтверждение пароля</label>
+                        <input type="password" id="reg-confirm-password" placeholder="Повторите пароль" required>
+                    </div>
+                    <div id="reg-error" class="form-error"></div>
+                    <button type="submit" class="btn-play-now w-100">Зарегистрироваться</button>
+                </form>
             </div>
+
+            <!-- Интерфейс Личного Кабинета -->
+            <div id="profile-box" class="hidden">
+                <div class="profile-header">
+                    <h2 class="modal-title">👤 Личный кабинет: <span id="profile-nickname-title" style="color: #c084fc;"></span></h2>
+                    <button class="btn-logout" onclick="handleLogout()">Выйти</button>
+                </div>
+
+                <div class="profile-grid">
+                    <!-- Настройки -->
+                    <div class="profile-settings">
+                        <!-- Изменить ник -->
+                        <div class="card-section">
+                            <h3>Изменить ник</h3>
+                            <div class="input-inline">
+                                <input type="text" id="new-nickname-input" placeholder="Новый ник">
+                                <button class="btn-secondary-action" onclick="updateNickname()">Сохранить</button>
+                            </div>
+                        </div>
+
+                        <!-- Привязать Discord -->
+                        <div class="card-section">
+                            <h3>Привязка Discord</h3>
+                            <p id="discord-status" class="status-text">Статус: Не привязан</p>
+                            <div class="input-inline">
+                                <input type="text" id="discord-input" placeholder="User#1234 или username">
+                                <button class="btn-secondary-action" onclick="linkDiscord()">Привязать</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Поменять Скин -->
+                    <div class="profile-skin">
+                        <h3>Смена скина</h3>
+                        <div class="skin-preview-box">
+                            <img id="skin-preview-img" src="https://mc-heads.net/body/MHF_Steve/160" alt="Превью скина">
+                        </div>
+                        <div class="form-group">
+                            <label>Загрузить скин (PNG):</label>
+                            <input type="file" id="skin-file-input" accept="image/png" onchange="handleSkinUpload(event)">
+                        </div>
+                        <div class="form-group" style="margin-top: 8px;">
+                            <label>Или вставьте URL скина:</label>
+                            <input type="text" id="skin-url-input" placeholder="https://..." onchange="handleSkinUrl(this.value)">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 
@@ -280,7 +362,7 @@
         <p>&copy; 2026 Astralix. Все права защищены. Сайт не связан с Mojang AB.</p>
     </footer>
 
-    <!-- Скрипты управления модалками, слайдером и онлайном -->
+    <!-- Основные скрипты -->
     <script>
         function openModal(id) {
             document.getElementById(id).classList.add('active');
@@ -321,7 +403,7 @@
             showSlide(currentSlide);
         }
 
-        // Автоматическая проверка статуса сервера через mcstatus.io API
+        // Мониторинг статуса сервера
         async function checkServerStatus() {
             const topOnlineDot = document.getElementById('top-online-dot');
             const topOnlineText = document.getElementById('top-online-text');
@@ -363,6 +445,185 @@
 
         checkServerStatus();
         setInterval(checkServerStatus, 20000);
+    </script>
+
+    <!-- Скрипт авторизации и работы Личного кабинета -->
+    <script>
+        let currentUser = null;
+
+        function getUsers() {
+            return JSON.parse(localStorage.getItem('astralix_users') || '{}');
+        }
+
+        function saveUsers(users) {
+            localStorage.setItem('astralix_users', JSON.stringify(users));
+        }
+
+        function switchAuthTab(tab) {
+            document.getElementById('tab-login').classList.toggle('active', tab === 'login');
+            document.getElementById('tab-register').classList.toggle('active', tab === 'register');
+            document.getElementById('form-login').classList.toggle('hidden', tab !== 'login');
+            document.getElementById('form-register').classList.toggle('hidden', tab !== 'register');
+            document.getElementById('login-error').textContent = '';
+            document.getElementById('reg-error').textContent = '';
+        }
+
+        function handleRegister(e) {
+            e.preventDefault();
+            const username = document.getElementById('reg-username').value.trim();
+            const password = document.getElementById('reg-password').value;
+            const confirm = document.getElementById('reg-confirm-password').value;
+            const errBox = document.getElementById('reg-error');
+
+            if (!username || !password) {
+                errBox.textContent = "Заполните все поля!";
+                return;
+            }
+            if (password !== confirm) {
+                errBox.textContent = "Пароли не совпадают!";
+                return;
+            }
+
+            const users = getUsers();
+            if (users[username.toLowerCase()]) {
+                errBox.textContent = "Пользователь с таким ником уже существует!";
+                return;
+            }
+
+            users[username.toLowerCase()] = {
+                username: username,
+                password: password,
+                discord: '',
+                skin: 'https://mc-heads.net/body/MHF_Steve/160'
+            };
+
+            saveUsers(users);
+            alert("Регистрация успешна! Теперь войдите в свой аккаунт.");
+            switchAuthTab('login');
+            document.getElementById('login-username').value = username;
+        }
+
+        function handleLogin(e) {
+            e.preventDefault();
+            const username = document.getElementById('login-username').value.trim();
+            const password = document.getElementById('login-password').value;
+            const errBox = document.getElementById('login-error');
+
+            const users = getUsers();
+            const user = users[username.toLowerCase()];
+
+            if (!user) {
+                errBox.textContent = "Такого аккаунта нету. Пожалуйста зарегистрируйтесь!";
+                return;
+            }
+
+            if (user.password !== password) {
+                errBox.textContent = "Неверный пароль!";
+                return;
+            }
+
+            currentUser = user.username.toLowerCase();
+            localStorage.setItem('astralix_session', currentUser);
+            renderProfile();
+        }
+
+        function handleLogout() {
+            currentUser = null;
+            localStorage.removeItem('astralix_session');
+            document.getElementById('profile-box').classList.add('hidden');
+            document.getElementById('auth-box').classList.remove('hidden');
+        }
+
+        function renderProfile() {
+            const users = getUsers();
+            const user = users[currentUser];
+            if (!user) return;
+
+            document.getElementById('auth-box').classList.add('hidden');
+            document.getElementById('profile-box').classList.remove('hidden');
+
+            document.getElementById('profile-nickname-title').textContent = user.username;
+            document.getElementById('new-nickname-input').value = user.username;
+            
+            const discordStatus = document.getElementById('discord-status');
+            if (user.discord) {
+                discordStatus.textContent = `Привязан: ${user.discord}`;
+                discordStatus.style.color = '#10b981';
+            } else {
+                discordStatus.textContent = 'Статус: Не привязан';
+                discordStatus.style.color = '#ef4444';
+            }
+
+            document.getElementById('skin-preview-img').src = user.skin || 'https://mc-heads.net/body/MHF_Steve/160';
+        }
+
+        function updateNickname() {
+            const newNick = document.getElementById('new-nickname-input').value.trim();
+            if (!newNick) return;
+
+            const users = getUsers();
+            const oldUser = users[currentUser];
+
+            if (newNick.toLowerCase() !== currentUser && users[newNick.toLowerCase()]) {
+                alert("Этот никнейм уже занят!");
+                return;
+            }
+
+            delete users[currentUser];
+            oldUser.username = newNick;
+            currentUser = newNick.toLowerCase();
+            users[currentUser] = oldUser;
+
+            saveUsers(users);
+            localStorage.setItem('astralix_session', currentUser);
+            renderProfile();
+            alert("Никнейм успешно изменён!");
+        }
+
+        function linkDiscord() {
+            const tag = document.getElementById('discord-input').value.trim();
+            if (!tag) return;
+
+            const users = getUsers();
+            users[currentUser].discord = tag;
+            saveUsers(users);
+            renderProfile();
+            alert("Discord успешно привязан!");
+        }
+
+        function handleSkinUpload(e) {
+            const file = e.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = function(evt) {
+                const base64Skin = evt.target.result;
+                saveSkin(base64Skin);
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function handleSkinUrl(url) {
+            if (!url.trim()) return;
+            saveSkin(url.trim());
+        }
+
+        function saveSkin(skinData) {
+            const users = getUsers();
+            users[currentUser].skin = skinData;
+            saveUsers(users);
+            document.getElementById('skin-preview-img').src = skinData;
+            alert("Скин успешно обновлен!");
+        }
+
+        // Проверка авторизации при загрузке страницы
+        window.addEventListener('DOMContentLoaded', () => {
+            const session = localStorage.getItem('astralix_session');
+            if (session && getUsers()[session]) {
+                currentUser = session;
+                renderProfile();
+            }
+        });
     </script>
 </body>
 </html>
