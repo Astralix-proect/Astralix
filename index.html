@@ -4,155 +4,119 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- SEO Ключевые слова для поиска -->
     <title>Astralix — сервер по маинкрафту с модом Create | Официальный сайт</title>
-    <meta name="description" content="Astralix — это уникальный сервер по маинкрафту с модом Create и Aeronautics! Автоматизация, инженерия, дирижабли и комфортное выживание на NeoForge 1.21.1.">
-    <meta name="keywords" content="Astralix, Astralix сервер по маинкрафту с модом Create, майнкрафт сервер с модом create, create aeronautics minecraft server, minecraft neoforge 1.21.1 create">
+    <meta name="description" content="Astralix — уникальный сервер по маинкрафту с модом Create Aeronautics! Автоматизация, дирижабли и комфортное выживание.">
 
-    <!-- Иконка сайта (Favicon) -->
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="apple-touch-icon" href="favicon.png">
 
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- Верхняя шапка / Навигация -->
+    <div class="glow-bg">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
     <header class="navbar">
         <div class="nav-container">
             <div class="online-indicator">
-                <span class="dot"></span> <strong>0</strong> игроков онлайн
+                <span class="dot"></span> <strong>15</strong> игроков онлайн
             </div>
             <nav class="nav-menu">
-                <a href="#" class="active">🏠 Главная</a>
-                <a href="#servers">💻 Сервера</a>
-                <a href="https://discord.gg/NEcNGfysbB" target="_blank">🎮 Начать играть</a>
-                <a href="#">📜 Правила</a>
-                <a href="#">📊 ТОП игроков</a>
-                <a href="#" class="btn-donate">🎁 Донат</a>
-                <a href="#">❓ ЧаВо</a>
+                <button class="nav-btn active" onclick="switchTab('main')">🏠 Главная</button>
+                <button class="nav-btn" onclick="switchTab('servers')">💻 Сервера</button>
+                <button class="nav-btn" onclick="openModal('play-modal')">🎮 Начать играть</button>
+                <button class="nav-btn" onclick="openModal('rules-modal')">📜 Правила</button>
+                <button class="nav-btn" onclick="openModal('faq-modal')">❓ ЧаВо</button>
+                <button class="nav-btn btn-donate" onclick="openModal('donate-modal')">🎁 Донат</button>
             </nav>
             <div class="user-cabinet">
-                <a href="https://discord.gg/NEcNGfysbB" target="_blank" class="btn-account">👤 Личный кабинет</a>
+                <button class="btn-account" onclick="openModal('play-modal')">👤 Личный кабинет</button>
             </div>
         </div>
     </header>
 
-    <!-- Главный блок (Hero Section) -->
     <main class="main-container">
-        <section class="hero-section">
-            <h1 class="brand-title">ASTRALIX</h1>
-            <p class="hero-description">
-                Мы сделали этот проект, чтобы играть было по-настоящему уютно, а творческие и социальные идеи легко оживали.
-            </p>
-            
-            <a href="https://discord.gg/NEcNGfysbB" target="_blank" class="btn-play-now">
-                🎮 Играть сейчас
-            </a>
-
-            <!-- Статистика -->
-            <div class="stats-container">
-                <div class="stat-box">
-                    <span class="stat-number">2</span>
-                    <span class="stat-label">Серверов</span>
+        
+        <div id="tab-main" class="tab-content active">
+            <section class="hero-section">
+                <div class="badge-glow">
+                    <span class="badge-dot"></span> Игровой сервер нового поколения
                 </div>
-                <div class="stat-box">
-                    <span class="stat-number">0</span>
-                    <span class="stat-label">Игроков онлайн</span>
+                <h1 class="brand-title">ASTRALIX</h1>
+                <p class="hero-description">
+                    Мы сделали этот проект, чтобы играть было по-настоящему уютно, а творческие и инженерные идеи легко оживали.
+                </p>
+                
+                <div class="hero-actions">
+                    <button class="btn-play-now" onclick="openModal('play-modal')">🎮 Начать играть</button>
+                    <button class="btn-secondary-action" onclick="openModal('rules-modal')">📜 Изучить правила</button>
                 </div>
-            </div>
 
-            <!-- Видеоплеер трейлера -->
-            <div class="video-card">
-                <div class="video-wrapper">
-                    <video controls poster="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1000&auto=format&fit=crop">
-                        <source src="" type="video/mp4">
-                        Ваш браузер не поддерживает видео.
-                    </video>
-                </div>
-                <div class="video-footer">
-                    Трейлер сезона
-                </div>
-            </div>
-
-            <p class="section-invite">
-                Присоединяйтесь к нашим сервера́м! Играйте с друзьями, стройте эпические сооружения и исследуйте бескрайний мир.
-            </p>
-        </section>
-
-        <!-- Карточки серверов -->
-        <section id="servers" class="servers-grid">
-            
-            <!-- Карточка 1: Aeronautics -->
-            <div class="server-card">
-                <div class="ribbon ribbon-paid">ПЛАТНЫЙ</div>
-                <div class="card-banner" style="background-image: url('https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=600&auto=format&fit=crop');">
-                    <div class="card-icon-frame">
-                        <img src="favicon.png" alt="Aeronautics" onerror="this.style.display='none'">
+                <div class="stats-container">
+                    <div class="stat-box">
+                        <span class="stat-number">1</span>
+                        <span class="stat-label">Сервер</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-number">15</span>
+                        <span class="stat-label">Игроков онлайн</span>
                     </div>
                 </div>
-                <div class="card-body">
-                    <h2 class="server-title">Аэронавтика | Aeronautics</h2>
-                    <p class="server-desc">
-                        Create Aeronautics — это мод, которого ждали 5 лет, и он наконец вышел. По ощущениям это почти Scrap Mechanic в Minecraft.
-                    </p>
-                    <div class="tags-list">
-                        <span class="tag">⚙️ Create</span>
-                        <span class="tag">📷 Exposure</span>
-                        <span class="tag">✈️ Aeronautics</span>
+
+                <div class="video-card">
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Трейлер" allowfullscreen></iframe>
                     </div>
-                    <div class="server-info">
-                        <div class="info-row">
-                            <span>Онлайн:</span>
-                            <strong>0/40</strong>
-                        </div>
-                        <div class="info-row">
-                            <span>Версия:</span>
-                            <span class="version-badge">NeoForge 1.21.1</span>
+                    <div class="video-footer">
+                        🎬 Трейлер сезона Astralix
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div id="tab-servers" class="tab-content">
+            <h2 class="section-heading">Наш сервер</h2>
+            <section class="servers-grid">
+                <div class="server-card">
+                    <div class="ribbon ribbon-paid">ОФИЦИАЛЬНЫЙ</div>
+                    <div class="card-banner" style="background-image: url('https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=800&auto=format&fit=crop');">
+                        <div class="card-icon-frame">
+                            <img src="favicon.png" alt="Astralix Logo" onerror="this.src='https://via.placeholder.com/60'">
                         </div>
                     </div>
-                    <a href="https://discord.gg/NEcNGfysbB" target="_blank" class="btn-more">Подробнее ➔</a>
-                </div>
-            </div>
-
-            <!-- Карточка 2: Create Industrial -->
-            <div class="server-card">
-                <div class="ribbon ribbon-free">БЕСПЛАТНЫЙ</div>
-                <div class="card-banner" style="background-image: url('https://images.unsplash.com/photo-1509198397868-475647b2a1e5?q=80&w=600&auto=format&fit=crop');">
-                    <div class="card-icon-frame">
-                        <img src="favicon.png" alt="Create Industrial" onerror="this.style.display='none'">
-                    </div>
-                </div>
-                <div class="card-body">
-                    <h2 class="server-title">Инженерия | Create World</h2>
-                    <p class="server-desc">
-                        Настоящий сервер по маинкрафту с модом Create. Полноценная автоматизация, заводские комплексы, поезда, логистика и многоступенчатое производство.
-                    </p>
-                    <div class="tags-list">
-                        <span class="tag">⚙️ Create</span>
-                        <span class="tag">🚂 Railways</span>
-                        <span class="tag">🏭 Automation</span>
-                    </div>
-                    <div class="server-info">
-                        <div class="info-row">
-                            <span>Онлайн:</span>
-                            <strong>0/50</strong>
+                    <div class="card-body">
+                        <h2 class="server-title">Create Aeronautics | Astralix World</h2>
+                        <p class="server-desc">
+                            Create Aeronautics — это мод, которого ждали 5 лет! Полный эффект Scrap Mechanic в Minecraft. Полноценное воздухоплавание, поезда, сложные физические механизмы и масштабная автоматизация.
+                        </p>
+                        <div class="tags-list">
+                            <span class="tag">⚙️ Create</span>
+                            <span class="tag">✈️ Aeronautics</span>
+                            <span class="tag">📷 Exposure</span>
+                            <span class="tag">🚂 Interactive Trains</span>
                         </div>
-                        <div class="info-row">
-                            <span>Версия:</span>
-                            <span class="version-badge">NeoForge 1.21.1</span>
+                        <div class="server-info">
+                            <div class="info-row">
+                                <span>Онлайн:</span>
+                                <strong>15 / 50 игроков</strong>
+                            </div>
+                            <div class="info-row">
+                                <span>Версия ядра:</span>
+                                <span class="version-badge">NeoForge 1.21.1</span>
+                            </div>
                         </div>
+                        <button class="btn-more" onclick="openModal('play-modal')">Присоединиться к серверу ➔</button>
                     </div>
-                    <a href="https://discord.gg/NEcNGfysbB" target="_blank" class="btn-more">Подробнее ➔</a>
                 </div>
-            </div>
+            </section>
+        </div>
 
-        </section>
-
-        <!-- Баннер рейтинга Millida -->
         <div class="millida-banner-wrapper">
             <a href="https://millida.net/rating/servers/create-aeronautics-2" target="_blank" rel="noopener">
                 <img src="https://millida.net/rating/servers/create-aeronautics-2/banner.svg" alt="Create Aeronautics — рейтинг серверов Minecraft на Millida" width="340" height="74">
@@ -160,14 +124,144 @@
         </div>
     </main>
 
-    <!-- Плавающая кнопка Поддержка -->
     <a href="https://discord.gg/NEcNGfysbB" target="_blank" class="floating-support">
-        💬 ПОДДЕРЖКА
+        💬 ПОДДЕРЖКА В DISCORD
     </a>
+
+    <div id="rules-modal" class="modal-overlay">
+        <div class="modal-card modal-large">
+            <button class="modal-close" onclick="closeModal('rules-modal')">✕</button>
+            <h2 class="modal-title">🌌 ПРАВИЛА СЕРВЕРА 𝑨𝒔𝒕𝒓𝒂𝒍𝒊𝒙 🌌</h2>
+            <div class="modal-body rules-body">
+                <p class="quote-box">Добро пожаловать в <strong>𝑨𝒔𝒕𝒓𝒂𝒍𝒊𝒙</strong>. Наше пространство строится на уважении, порядке и здравом смысле. Находясь здесь, вы автоматически соглашаетесь с нижеизложенными нормами.</p>
+                
+                <h3>⚖️ 1.0 ✦ ОСНОВНЫЕ ПРАВИЛА</h3>
+                <ul>
+                    <li><strong>[1.1]</strong> Запрещена любая политика.</li>
+                    <li><strong>[1.2]</strong> Запрещено упоминание нацистской Германии и экстремистской символики.</li>
+                    <li><strong>[1.3]</strong> Запрещены призывы к нарушению правил.</li>
+                    <li><strong>[1.4]</strong> Запрещено распространение ложной информации.</li>
+                    <li><strong>[1.5]</strong> Запрещена реклама (в том числе в личных сообщениях).</li>
+                    <li><strong>[1.6]</strong> Запрещено использование нескольких аккаунтов (твинков).</li>
+                    <li><strong>[1.7]</strong> Запрещена публикация личной информации о человекe без его согласия.</li>
+                    <li><strong>[1.8]</strong> Запрещено выдавать себя за другого человека или администрацию.</li>
+                    <li><strong>[1.9]</strong> Запрещено препятствование работе администрации.</li>
+                    <li><strong>[1.10]</strong> Правила распространяются на все каналы сервера и ЛС между участниками.</li>
+                </ul>
+
+                <h3>💬 2.0 ✦ ПРАВИЛА ОБЩЕНИЯ И КОНТЕНТА</h3>
+                <ul>
+                    <li><strong>[2.1]</strong> Запрещено разжигание конфликтов, токсичность и провокации.</li>
+                    <li><strong>[2.2]</strong> Запрещено оскорблять человека без его согласия.</li>
+                    <li><strong>[2.3]</strong> Запрещены любые угрозы жизни, здоровью или имуществу участников.</li>
+                    <li><strong>[2.4]</strong> Запрещён оффтоп.</li>
+                    <li><strong>[2.5]</strong> Запрещено упоминание людей и ролей без причины.</li>
+                    <li><strong>[2.6]</strong> Не пингуйте <strong>@Гл.Админ</strong> без веской причины.</li>
+                    <li><strong>[2.7]</strong> Запрещено издавать раздражающие звуки в голосовых каналах.</li>
+                    <li><strong>[2.8]</strong> Запрещён NSFW-контент (18+).</li>
+                    <li><strong>[2.9]</strong> Запрещено отправлять вредоносные программы.</li>
+                    <li><strong>[2.10]</strong> Любой вид обмана запрещён.</li>
+                    <li><strong>[2.11]</strong> Запрещён спам, флуд, капс и злоупотребление эмодзи/GIF.</li>
+                </ul>
+
+                <h3>🔊 3.0 ✦ ГОЛОСОВЫЕ КАНАЛЫ</h3>
+                <ul>
+                    <li><strong>[3.1]</strong> Запрещен намеренный крик и срыв голосовых эфиров.</li>
+                    <li><strong>[3.2]</strong> Программы, искажающие голос до помех, запрещены.</li>
+                    <li><strong>[3.3]</strong> Запрещена запись без согласия участников.</li>
+                </ul>
+
+                <h3>🎮 4.0 ✦ ПРАВИЛА ГЕЙМПЛЕЯ</h3>
+                <ul>
+                    <li><strong>[4.1]</strong> Запрещено постороннее ПО (читы, X-Ray и т.д.).</li>
+                    <li><strong>[4.2]</strong> Запрещена демонстрация читов.</li>
+                    <li><strong>[4.3]</strong> Запрещено использование багов.</li>
+                    <li><strong>[4.4]</strong> Запрещены лаг-машины.</li>
+                    <li><strong>[4.5]</strong> Запрещено гриферство (взрыв крипера тоже относится).</li>
+                    <li><strong>[4.6]</strong> Запрещено умышленное убийство человека без его согласия.</li>
+                </ul>
+
+                <h3>🛡️ 5.0 ✦ СИСТЕМА НАКАЗАНИЙ</h3>
+                <ul>
+                    <li><strong>[5.1] Warn:</strong> Предупреждение.</li>
+                    <li><strong>[5.2] Mute:</strong> Ограничение чата или голоса.</li>
+                    <li><strong>[5.3] Kick:</strong> Принудительное отключение.</li>
+                    <li><strong>[5.4] Ban:</strong> Полный бессрочный бан.</li>
+                    <li><strong>[5.5]</strong> Обход наказаний приводит к бану всех аккаунтов.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="play-modal" class="modal-overlay">
+        <div class="modal-card">
+            <button class="modal-close" onclick="closeModal('play-modal')">✕</button>
+            <h2 class="modal-title">🎮 Как начать играть на Astralix</h2>
+            <div class="modal-body text-center">
+                <p style="margin-bottom: 20px; color: var(--text-secondary);">
+                    Все авторизации, скачивание лаунчера и проходки происходят через наше Discord сообщество!
+                </p>
+                <a href="https://discord.gg/NEcNGfysbB" target="_blank" class="btn-play-now" style="display:block; text-align:center;">
+                    Присоединиться к Discord
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="faq-modal" class="modal-overlay">
+        <div class="modal-card">
+            <button class="modal-close" onclick="closeModal('faq-modal')">✕</button>
+            <h2 class="modal-title">❓ Часто задаваемые вопросы</h2>
+            <div class="modal-body">
+                <p><strong>Какой IP у сервера?</strong><br>IP доступен в нашем Discord канале после получения роли.</p><br>
+                <p><strong>Нужна ли лицензия?</strong><br>Играть можно как с лицензии, так и через наш официальный лаунчер.</p><br>
+                <p><strong>Какая версия сборки?</strong><br>Моды работают на NeoForge 1.21.1 с модами Create & Aeronautics.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="donate-modal" class="modal-overlay">
+        <div class="modal-card">
+            <button class="modal-close" onclick="closeModal('donate-modal')">✕</button>
+            <h2 class="modal-title">🎁 Поддержка и Донат</h2>
+            <div class="modal-body text-center">
+                <p style="color: var(--text-secondary); margin-bottom: 20px;">
+                    Наш проект принципиально не использует систем Pay2Win! Вы можете поддержать развитие сервера и получить косметические бонусы в Discord.
+                </p>
+                <a href="https://discord.gg/NEcNGfysbB" target="_blank" class="btn-play-now" style="display:block;">
+                    Перейти в магазин Discord
+                </a>
+            </div>
+        </div>
+    </div>
 
     <footer class="site-footer">
         <p>&copy; 2026 Astralix. Все права защищены. Сайт не связан с Mojang AB.</p>
     </footer>
 
+    <script>
+        function switchTab(tabName) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.nav-btn').forEach(el => el.classList.remove('active'));
+            
+            document.getElementById('tab-' + tabName).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+
+        function openModal(id) {
+            document.getElementById(id).classList.add('active');
+        }
+
+        function closeModal(id) {
+            document.getElementById(id).classList.remove('active');
+        }
+
+        // Закрытие по клику на фон
+        window.onclick = function(e) {
+            if (e.target.classList.contains('modal-overlay')) {
+                e.target.classList.remove('active');
+            }
+        }
+    </script>
 </body>
 </html>
