@@ -114,26 +114,43 @@
                 <div class="slider-card">
                     <div class="slider-viewport">
                         <div class="slide active">
-                            <img src="aero1_2.jpg" alt="Скриншот 1" onclick="zoomImage(this.src)">
+                            <img src="2026-08-04_15.36.32.png" alt="Скриншот 1" onclick="zoomCurrentSlide()">
                         </div>
                         <div class="slide">
-                            <img src="qSpIYeuAJ7dBvCergyheqpJcC1YuWRBW7ax7paLK_2.jpg" alt="Скриншот 2" onclick="zoomImage(this.src)">
+                            <img src="2026-08-05_15.36.21.png" alt="Скриншот 2" onclick="zoomCurrentSlide()">
                         </div>
                         <div class="slide">
-                            <img src="YASeQLX727CMvRTs5pfYcR5pkfR66Pbaz2L64Hv0_2.jpg" alt="Скриншот 3" onclick="zoomImage(this.src)">
+                            <img src="2026-08-05_17.12.11.png" alt="Скриншот 3" onclick="zoomCurrentSlide()">
                         </div>
                         <div class="slide">
-                            <img src="7iThdoO1vkSJXvIbJ7pDxiGKuCxnb2cP1dbIoS09_2.jpg" alt="Скриншот 4" onclick="zoomImage(this.src)">
+                            <img src="2026-08-11_16.13.27.png" alt="Скриншот 4" onclick="zoomCurrentSlide()">
                         </div>
                         <div class="slide">
-                            <img src="2026-08-05_17.12.11.png" alt="Скриншот 5" onclick="zoomImage(this.src)">
+                            <img src="2026-08-11_16.22.39.png" alt="Скриншот 5" onclick="zoomCurrentSlide()">
                         </div>
                         <div class="slide">
-                            <img src="2026-08-05_15.36.21.png" alt="Скриншот 6" onclick="zoomImage(this.src)">
+                            <img src="7iThdoO1vkSJXvIbJ7pDxiGKuCxnb2cP1dbIoS09.png" alt="Скриншот 6" onclick="zoomCurrentSlide()">
                         </div>
+                        <div class="slide">
+                            <img src="YASeQLX727CMvRTs5pfYcR5pkfR66Pbaz2L64Hv0.png" alt="Скриншот 7" onclick="zoomCurrentSlide()">
+                        </div>
+
+                        <!-- Кнопка приближения текущего скриншота -->
+                        <button class="zoom-trigger-btn" onclick="zoomCurrentSlide()">🔍 Увеличить</button>
 
                         <button class="slider-btn prev" onclick="moveSlide(-1)">❮</button>
                         <button class="slider-btn next" onclick="moveSlide(1)">❯</button>
+                    </div>
+
+                    <!-- Точки переключения слайдов (пагинация) -->
+                    <div class="slider-dots" id="slider-dots">
+                        <span class="dot-item active" onclick="setSlide(0)"></span>
+                        <span class="dot-item" onclick="setSlide(1)"></span>
+                        <span class="dot-item" onclick="setSlide(2)"></span>
+                        <span class="dot-item" onclick="setSlide(3)"></span>
+                        <span class="dot-item" onclick="setSlide(4)"></span>
+                        <span class="dot-item" onclick="setSlide(5)"></span>
+                        <span class="dot-item" onclick="setSlide(6)"></span>
                     </div>
                 </div>
             </div>
@@ -236,7 +253,8 @@
                     <div class="step-num">02</div>
                     <h3>Скачайте лаунчер</h3>
                     <p>Установите лаунчер под Windows и подключайтесь к серверу.</p>
-                    <a href="https://drive.google.com/uc?export=download&id=1dGX5FFlSW2ouExz1reNs6bPt-t_XOxA_" class="btn-step primary">Скачать лаунчер ↓</a>
+                    <!-- Прямая ссылка из GitHub Releases -->
+                    <a href="https://github.com/Astralix-proect/Astralix/releases/download/v1.0.0/AstralixLauncher.exe" class="btn-step primary" download>Скачать лаунчер ↓</a>
                 </div>
             </div>
 
@@ -252,7 +270,8 @@
                             <p>Для обычных ПК и ноутбуков</p>
                         </div>
                     </div>
-                    <a href="https://drive.google.com/uc?export=download&id=1dGX5FFlSW2ouExz1reNs6bPt-t_XOxA_" class="btn-download">Скачать</a>
+                    <!-- Прямая ссылка из GitHub Releases -->
+                    <a href="https://github.com/Astralix-proect/Astralix/releases/download/v1.0.0/AstralixLauncher.exe" class="btn-download" download>Скачать</a>
                 </div>
             </div>
         </div>
@@ -302,11 +321,6 @@
             alert("IP адрес Astralix.minerent.io скопирован!");
         }
 
-        function zoomImage(src) {
-            document.getElementById('zoomed-image').src = src;
-            openModal('image-modal');
-        }
-
         window.onclick = function(e) {
             if (e.target.classList.contains('modal-overlay')) {
                 e.target.classList.remove('active');
@@ -316,17 +330,38 @@
         // Слайдер скриншотов
         let currentSlide = 0;
         const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.dot-item');
 
         function showSlide(index) {
             slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+
             if (index >= slides.length) currentSlide = 0;
             if (index < 0) currentSlide = slides.length - 1;
+
             slides[currentSlide].classList.add('active');
+            if (dots[currentSlide]) {
+                dots[currentSlide].classList.add('active');
+            }
         }
 
         function moveSlide(step) {
             currentSlide += step;
             showSlide(currentSlide);
+        }
+
+        function setSlide(index) {
+            currentSlide = index;
+            showSlide(currentSlide);
+        }
+
+        // Приближение текущего просматриваемого скриншота
+        function zoomCurrentSlide() {
+            const activeImg = slides[currentSlide].querySelector('img');
+            if (activeImg) {
+                document.getElementById('zoomed-image').src = activeImg.src;
+                openModal('image-modal');
+            }
         }
 
         // Мониторинг статуса сервера
