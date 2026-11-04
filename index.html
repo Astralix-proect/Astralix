@@ -1,367 +1,291 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Astralix Aeronautics — инженерия начинается в небе</title>
-    <meta name="description" content="Astralix Aeronautics — Minecraft-сервер для инженерных идей, воздушных кораблей и совместных проектов.">
-
-    <!-- Иконка сайта (Favicon) -->
-    <link rel="icon" type="image/png" href="favicon.png">
-    <link rel="shortcut icon" type="image/png" href="favicon.png">
-    <link rel="apple-touch-icon" href="favicon.png">
-
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <meta name="theme-color" content="#07121f">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#071522">
+  <meta name="description" content="ᴀᴇʀᴏɴᴀꜰꜰᴛɪᴋ — Minecraft-сервер Create & Aeronautics. Воздушные корабли, механизмы и инженерные проекты в одном мире.">
+  <title>ᴀᴇʀᴏɴᴀꜰꜰᴛɪᴋ — мир Create &amp; Aeronautics</title>
+  <link rel="icon" type="image/png" href="aeronauttik-avatar.png">
+  <link rel="apple-touch-icon" href="aeronauttik-avatar.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <!-- Неоновый задний фон -->
-    <div class="glow-bg">
-        <div class="blob blob-1"></div>
-        <div class="blob blob-2"></div>
+  <div class="ambient" aria-hidden="true"><span class="orb orb-a"></span><span class="orb orb-b"></span><span class="grid-glow"></span></div>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#top" aria-label="ᴀᴇʀᴏɴᴀꜰꜰᴛɪᴋ — на главную"><img src="aeronauttik-avatar.png" alt="" class="brand-mark"><span>ᴀᴇʀᴏɴᴀꜰꜰᴛɪᴋ</span></a>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Открыть меню" aria-expanded="false"><span></span><span></span></button>
+      <nav class="main-nav" id="main-nav" aria-label="Главная навигация">
+        <a href="#server">Сервер</a><a href="#start">Как начать</a><a href="#gallery">Галерея</a><a href="#rules">Правила</a><a href="#faq">FAQ</a>
+      </nav>
+      <div class="header-actions"><span class="live-pill"><i class="status-dot" id="status-dot"></i><span id="status-short">Проверяем</span></span><a class="nav-discord" href="https://discord.gg/WbsCtNXwtd" target="_blank" rel="noopener noreferrer">Discord <span aria-hidden="true">↗</span></a></div>
     </div>
+  </header>
 
-    <!-- Шапка / Навигация -->
-    <header class="navbar">
-        <div class="nav-container">
-            <div class="online-indicator" id="top-online-container">
-                <span class="dot" id="top-online-dot"></span> <span id="top-online-text">Проверка статуса...</span>
-            </div>
-            <nav class="nav-menu">
-                <button class="nav-btn active" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">Главная</button>
-                <button class="nav-btn" onclick="scrollToCard()">Сервер</button>
-                <button class="nav-btn" onclick="openModal('play-modal')">Как начать</button>
-                <button class="nav-btn" onclick="openModal('rules-modal')">Правила</button>
-                <button class="nav-btn" onclick="openModal('faq-modal')">FAQ</button>
-            </nav>
+  <main id="top">
+    <section class="hero wrap">
+      <div class="hero-copy reveal">
+        <div class="eyebrow"><span class="eyebrow-line"></span> CREATE&nbsp; × &nbsp;AERONAUTICS</div>
+        <h1>Мир, которому<br><em>тесно на земле.</em></h1>
+        <p class="hero-lead">Собирай летающие машины, строй мастерские и исследуй общий мир, где каждая идея может взлететь.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#server">Подключиться <span aria-hidden="true">↓</span></a>
+          <a class="button button-ghost" href="https://discord.gg/WbsCtNXwtd" target="_blank" rel="noopener noreferrer">Наш Discord <span aria-hidden="true">↗</span></a>
         </div>
-    </header>
+        <div class="hero-note"><span class="note-icon">✦</span> Minecraft Java <b>·</b> NeoForge 1.21.1 <b>·</b> Create &amp; Aeronautics</div>
+      </div>
+      <div class="hero-art reveal" aria-label="Воздушный корабль в мире Aeronauttik">
+        <img src="aeronauttik-banner.png" alt="Воздушный корабль и летающий остров над облаками" fetchpriority="high">
+        <div class="art-shade"></div>
+        <div class="art-tag"><span class="tag-pulse"></span> ВОЗДУШНЫЙ РУБЕЖ <span class="tag-coords">01 / 05</span></div>
+        <div class="art-caption"><span>Небо — это только начало.</span><span class="caption-mark">AERONAUTTIK / 01</span></div>
+      </div>
+      <div class="hero-decoration" aria-hidden="true"><span>ALTITUDE<br>UNLIMITED</span><i>↗</i></div>
+    </section>
 
-    <!-- Основной контент -->
-    <main class="main-container">
-        <section class="hero-section" aria-labelledby="hero-title">
-            <div class="hero-grid">
-                <div class="hero-copy">
-                    <div class="badge-glow"><span class="badge-dot"></span> Мир Create &amp; Aeronautics</div>
-                    <h1 class="brand-title" id="hero-title">ASTRALIX</h1>
-                    <span class="brand-kicker">Engineering beyond the horizon</span>
-                    <p class="hero-description">Собирай механизмы, прокладывай маршруты и поднимай свои идеи выше облаков — вместе с дружным сообществом инженеров.</p>
-                    <div class="hero-actions">
-                        <button class="btn-play-now" onclick="openModal('play-modal')">Начать приключение <span aria-hidden="true">↗</span></button>
-                        <button class="btn-secondary-action" onclick="scrollToCard()">О сервере <span aria-hidden="true">↓</span></button>
-                    </div>
-                </div>
-                <div class="hero-visual" role="img" aria-label="Воздушные корабли и летающие острова в мире Astralix">
-                    <div class="visual-caption">
-                        <div><strong>Открытое небо. Большие идеи.</strong><span>Создавай, исследуй, лети дальше.</span></div>
-                        <span class="visual-coordinates">52° 31' N&nbsp;&nbsp; 13° 24' E</span>
-                    </div>
-                </div>
-            </div>
+    <section class="quick-stats wrap reveal" aria-label="Информация о сервере">
+      <div class="quick-stat"><span class="stat-icon">◉</span><div><b id="hero-online-count">—</b><small id="hero-online-label">проверяем сервер</small></div></div>
+      <div class="quick-stat"><span class="stat-icon">⌘</span><div><b>1.21.1</b><small>версия Minecraft</small></div></div>
+      <div class="quick-stat"><span class="stat-icon">↗</span><div><b>Create</b><small>механизмы и полёт</small></div></div>
+      <a class="quick-stat stat-link" href="https://discord.gg/WbsCtNXwtd" target="_blank" rel="noopener noreferrer"><span class="stat-icon">⌁</span><div><b>Discord</b><small>сообщество и помощь</small></div><span class="stat-arrow">↗</span></a>
+    </section>
 
-            <div class="stats-container" aria-label="Статистика сервера">
-                <div class="stat-box"><span class="stat-number">1.21.1</span><span class="stat-label">Версия мира</span></div>
-                <div class="stat-box"><span class="stat-number" id="hero-online-count">--</span><span class="stat-label" id="hero-online-label">Игроков онлайн</span></div>
-            </div>
-
-            <div class="server-card-main" id="servers-section">
-                <div class="server-card">
-                    <div class="card-banner" style="background-image: linear-gradient(180deg, rgba(6, 18, 31, 0.04), rgba(6, 18, 31, 0.35)), url('bg.png');">
-                        <div class="card-icon-frame"><img src="favicon.png" alt="Логотип Astralix"></div>
-                    </div>
-                    <div class="card-body">
-                        <div class="section-eyebrow">Точка отправления</div>
-                        <h2 class="server-title">Create Aeronautics<br>на Astralix</h2>
-                        <p class="server-desc">Инженерная песочница, в которой механизмы обретают движение, а небо становится частью твоего мира. Строй в своём темпе и делись открытиями с другими.</p>
-                        <div class="tags-list">
-                            <span class="tag">Create</span><span class="tag">Aeronautics</span><span class="tag">Совместное строительство</span>
-                        </div>
-                        <div class="server-info">
-                            <div class="info-row"><span>Статус</span><strong id="card-online-text">Проверяем соединение...</strong></div>
-                            <div class="info-row"><span>Адрес</span><strong class="ip-address" onclick="copyIp()" title="Нажмите, чтобы скопировать" role="button" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') copyIp()">d4.rionix.cloud:25043</strong></div>
-                            <div class="info-row"><span>Загрузчик</span><span class="version-badge">NeoForge 1.21.1</span></div>
-                        </div>
-                        <button class="btn-more" onclick="openModal('play-modal')">Как подключиться <span aria-hidden="true">→</span></button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="screenshots-section">
-                <div class="section-heading"><div><div class="section-eyebrow">Взгляд изнутри</div><h2 class="screenshots-title">Мир в кадре</h2></div><p class="section-note">Несколько мгновений из жизни мира — листай и вдохновляйся.</p></div>
-                <div class="slider-card">
-                    <div class="slider-viewport">
-                        <div class="slide active"><img src="2026-08-04_15.36.32.png" alt="Постройки в мире Astralix" onclick="zoomCurrentSlide()"></div>
-                        <div class="slide"><img src="2026-08-05_15.36.21.png" alt="Пейзаж сервера Astralix" onclick="zoomCurrentSlide()"></div>
-                        <div class="slide"><img src="2026-08-05_17.12.11.png" alt="Инженерные постройки в Minecraft" onclick="zoomCurrentSlide()"></div>
-                        <div class="slide"><img src="2026-08-11_16.13.27.png" alt="Мир Astralix с высоты" onclick="zoomCurrentSlide()"></div>
-                        <div class="slide"><img src="2026-08-11_16.22.39.png" alt="Игровая постройка Astralix" onclick="zoomCurrentSlide()"></div>
-                        <div class="slide"><img src="7iThdoO1vkSJXvIbJ7pDxiGKuCxnb2cP1dbIoS09.jpg" alt="Скриншот игрового мира" onclick="zoomCurrentSlide()"></div>
-                        <div class="slide"><img src="YASeQLX727CMvRTs5pfYcR5pkfR66Pbaz2L64Hv0.jpg" alt="Скриншот сервера Astralix" onclick="zoomCurrentSlide()"></div>
-                        <button class="zoom-trigger-btn" onclick="zoomCurrentSlide()">Увеличить</button>
-                        <button class="slider-btn prev" aria-label="Предыдущий скриншот" onclick="moveSlide(-1)">❮</button>
-                        <button class="slider-btn next" aria-label="Следующий скриншот" onclick="moveSlide(1)">❯</button>
-                    </div>
-                    <div class="slider-dots" id="slider-dots" aria-label="Выбрать скриншот">
-                        <button class="dot-item active" aria-label="Скриншот 1" onclick="setSlide(0)"></button><button class="dot-item" aria-label="Скриншот 2" onclick="setSlide(1)"></button><button class="dot-item" aria-label="Скриншот 3" onclick="setSlide(2)"></button><button class="dot-item" aria-label="Скриншот 4" onclick="setSlide(3)"></button><button class="dot-item" aria-label="Скриншот 5" onclick="setSlide(4)"></button><button class="dot-item" aria-label="Скриншот 6" onclick="setSlide(5)"></button><button class="dot-item" aria-label="Скриншот 7" onclick="setSlide(6)"></button>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Плавающая кнопка Поддержка -->
-    <a href="https://discord.com/channels/1542504877228425296/1548026906132349029" target="_blank" class="floating-support">
-        💬 ПОДДЕРЖКА В DISCORD
-    </a>
-
-    <!-- ВСПЛЫВАЮЩИЕ МОДАЛЬНЫЕ ОКНА -->
-
-    <!-- Модалка: Правила -->
-    <div id="rules-modal" class="modal-overlay">
-        <div class="modal-card modal-large">
-            <button class="modal-close" onclick="closeModal('rules-modal')">✕</button>
-            <h2 class="modal-title">🌌 ПРАВИЛА СЕРВЕРА 𝑨𝒔𝒕𝒓𝒂𝒍𝒊𝒙 🌌</h2>
-            <div class="modal-body rules-body">
-                <p class="quote-box">Добро пожаловать в <strong>𝑨𝒔𝒕𝒓𝒂𝒍𝒊𝒙</strong>. Наше пространство строится на уважении, порядке и здравом смысле. Находясь здесь, вы автоматически соглашаетесь с нижеизложенными нормами.</p>
-                
-                <h3>⚖️ 1.0 ✦ ОСНОВНЫЕ ПРАВИЛА</h3>
-                <ul>
-                    <li><strong>[1.1]</strong> Запрещена любая политика.</li>
-                    <li><strong>[1.2]</strong> Запрещено упоминание нацистской Германии и экстремистской символики.</li>
-                    <li><strong>[1.3]</strong> Запрещены призывы к нарушению правил.</li>
-                    <li><strong>[1.4]</strong> Запрещено распространение ложной информации.</li>
-                    <li><strong>[1.5]</strong> Запрещена реклама (в том числе в личных сообщениях).</li>
-                    <li><strong>[1.6]</strong> Запрещено использование нескольких аккаунтов (твинков).</li>
-                    <li><strong>[1.7]</strong> Запрещена публикация личной информации о человеку без его согласия.</li>
-                    <li><strong>[1.8]</strong> Запрещено выдавать себя за другого человека или администрацию.</li>
-                    <li><strong>[1.9]</strong> Запрещено препятствование работе администрации.</li>
-                    <li><strong>[1.10]</strong> Правила распространяются на все каналы сервера и ЛС между участниками.</li>
-                </ul>
-
-                <h3>💬 2.0 ✦ ПРАВИЛА ОБЩЕНИЯ И КОНТЕНТА</h3>
-                <ul>
-                    <li><strong>[2.1]</strong> Запрещено разжигание конфликтов, токсичность и провокации.</li>
-                    <li><strong>[2.2]</strong> Запрещено оскорблять человека без его согласия.</li>
-                    <li><strong>[2.3]</strong> Запрещены любые угрозы жизни, здоровью или имуществу участников.</li>
-                    <li><strong>[2.4]</strong> Запрещён оффтоп.</li>
-                    <li><strong>[2.5]</strong> Запрещено упоминание людей и ролей без причины.</li>
-                    <li><strong>[2.6]</strong> Не пингуйте <strong>@Гл.Админ</strong> без веской причины.</li>
-                    <li><strong>[2.7]</strong> Запрещено издавать раздражающие звуки в голосовых каналах.</li>
-                    <li><strong>[2.8]</strong> Запрещён NSFW-контент (18+).</li>
-                    <li><strong>[2.9]</strong> Запрещено отправлять вредоносные программы.</li>
-                    <li><strong>[2.10]</strong> Любой вид обмана запрещён.</li>
-                    <li><strong>[2.11]</strong> Запрещён спам, флуд, капс и злоупотребление эмодзи/GIF.</li>
-                </ul>
-
-                <h3>🔊 3.0 ✦ ГОЛОСОВЫЕ КАНАЛЫ</h3>
-                <ul>
-                    <li><strong>[3.1]</strong> Запрещен намеренный крик и срыв голосовых эфиров.</li>
-                    <li><strong>[3.2]</strong> Программы, искажающие голос до помех, запрещены.</li>
-                    <li><strong>[3.3]</strong> Запрещена запись без согласия участников.</li>
-                </ul>
-
-                <h3>🎮 4.0 ✦ ПРАВИЛА ГЕЙМПЛЕЯ</h3>
-                <ul>
-                    <li><strong>[4.1]</strong> Запрещено постороннее ПО (читы, X-Ray и т.д.).</li>
-                    <li><strong>[4.2]</strong> Запрещена демонстрация читов.</li>
-                    <li><strong>[4.3]</strong> Запрещено использование багов.</li>
-                    <li><strong>[4.4]</strong> Запрещены лаг-машины.</li>
-                    <li><strong>[4.5]</strong> Запрещено гриферство (взрыв крипера тоже относится).</li>
-                    <li><strong>[4.6]</strong> Запрещено умышленное убийство человека без его согласия.</li>
-                </ul>
-
-                <h3>🛡️ 5.0 ✦ СИСТЕМА НАКАЗАНИЙ</h3>
-                <ul>
-                    <li><strong>[5.1] Warn:</strong> Предупреждение.</li>
-                    <li><strong>[5.2] Mute:</strong> Ограничение чата или голоса.</li>
-                    <li><strong>[5.3] Kick:</strong> Принудительное отключение.</li>
-                    <li><strong>[5.4] Ban:</strong> Полный бессрочный бан.</li>
-                    <li><strong>[5.5]</strong> Обход наказаний приводит к бану всех аккаунтов.</li>
-                </ul>
-            </div>
+    <section class="section wrap" id="server">
+      <div class="section-head reveal"><div><p class="section-kicker">01 — ПОРТ ОТПРАВЛЕНИЯ</p><h2>Подключайся к миру</h2></div><p>Выбери удобный адрес. Оба ведут на один сервер.</p></div>
+      <div class="connect-panel reveal">
+        <div class="connect-intro"><div class="connect-icon">⌁</div><div><h3>Сервер открыт для экипажа</h3><p>Скопируй адрес и добавь его в список серверов Minecraft Java.</p></div><span class="status-label"><i class="status-dot" id="panel-status-dot"></i><span id="panel-status">Проверяем доступность</span></span></div>
+        <div class="address-grid">
+          <article class="address-card address-primary"><div class="address-label"><span>ОСНОВНОЙ АДРЕС</span><span class="address-badge">РЕКОМЕНДУЕМ</span></div><code id="primary-address">-ᴋɢ-ʙsᴢ02.ᴀʟᴛᴀʀᴇ.ɢʟᴏʙᴀʟ:25000</code><button class="copy-button" data-copy="primary" aria-label="Скопировать основной адрес">Копировать <span>⧉</span></button></article>
+          <article class="address-card"><div class="address-label"><span>КОРОТКИЙ АДРЕС</span><span class="address-badge badge-muted">АЛЬТЕРНАТИВА</span></div><code id="pretty-address">ᴀᴇʀᴏɴᴀꜰꜰᴛɪᴋ.xᴜʙɪ.ᴏʀɢ</code><button class="copy-button" data-copy="pretty" aria-label="Скопировать короткий адрес">Копировать <span>⧉</span></button></article>
         </div>
-    </div>
+        <div class="connect-foot"><span><i class="tiny-check">✓</i> Minecraft Java Edition</span><span><i class="tiny-check">✓</i> NeoForge 1.21.1</span><a href="https://discord.gg/WbsCtNXwtd" target="_blank" rel="noopener noreferrer">Нужна помощь? Заходи в Discord ↗</a></div>
+      </div>
+    </section>
 
-    <!-- Модалка: Как начать играть -->
-    <div id="play-modal" class="modal-overlay">
-        <div class="modal-card modal-large">
-            <button class="modal-close" onclick="closeModal('play-modal')">✕</button>
-            
-            <div class="play-guide-header">
-                <span class="badge-tag">БЫСТРЫЙ СТАРТ</span>
-                <h2>Как попасть на ASTRALIX</h2>
-                <p>Ознакомьтесь с правилами и установите лаунчер. Дальше все моды и настройки подтянутся автоматически.</p>
-            </div>
+    <section class="section wrap" id="start">
+      <div class="section-head reveal"><div><p class="section-kicker">02 — ПЕРВЫЙ ВЫЛЕТ</p><h2>Три шага до старта</h2></div><p>Подготовь клиент, добавь сервер — и увидимся в небе.</p></div>
+      <div class="steps-grid">
+        <article class="step-card reveal"><div class="step-top"><span class="step-number">01</span><span class="step-symbol">⌘</span></div><h3>Подготовь Minecraft</h3><p>Установи Minecraft Java Edition версии <b>1.21.1</b> и загрузчик NeoForge для этой версии.</p><span class="step-foot">JAVA · NEOFORGE</span></article>
+        <article class="step-card reveal"><div class="step-top"><span class="step-number">02</span><span class="step-symbol">⚙</span></div><h3>Установи сборку</h3><p>Список модов и помощь с настройкой ищи в нашем Discord. Не смешивай клиент с другими сборками.</p><a class="step-foot step-link" href="https://discord.gg/WbsCtNXwtd" target="_blank" rel="noopener noreferrer">ПЕРЕЙТИ В DISCORD ↗</a></article>
+        <article class="step-card reveal"><div class="step-top"><span class="step-number">03</span><span class="step-symbol">↗</span></div><h3>Добавь сервер</h3><p>В меню мультиплеера выбери «Добавить сервер», вставь основной адрес и отправляйся в полёт.</p><button class="step-foot step-copy" data-copy="primary">СКОПИРОВАТЬ IP ⧉</button></article>
+      </div>
+    </section>
 
-            <div class="steps-grid">
-                <div class="step-card">
-                    <div class="step-num">01</div>
-                    <h3>Атмосфера и правила</h3>
-                    <p>Познакомьтесь с нашим уютным сообществом и прочитайте правила перед игрой.</p>
-                    <button class="btn-step" onclick="closeModal('play-modal'); openModal('rules-modal')">Правила</button>
-                </div>
-                <div class="step-card">
-                    <div class="step-num">02</div>
-                    <h3>Скачайте лаунчер</h3>
-                    <p>Установите лаунчер под Windows и подключайтесь к серверу.</p>
-                    <!-- Прямая ссылка из GitHub Releases -->
-                    <a href="https://github.com/Astralix-proect/Astralix/releases/download/v1.0.0/AstralixLauncher.exe" class="btn-step primary" download>Скачать лаунчер ↓</a>
-                </div>
-            </div>
+    <section class="features-band"><div class="wrap features-inner"><div class="feature-title reveal"><p class="section-kicker">ЧТО ТЕБЯ ЖДЁТ</p><h2>Свобода<br>собрать свой мир.</h2></div><div class="feature-list"><div class="feature-item reveal"><span>01</span><div><b>Механизмы в движении</b><p>Соединяй детали Create и превращай идеи в работающие системы.</p></div><i>↗</i></div><div class="feature-item reveal"><span>02</span><div><b>Воздушные маршруты</b><p>Проектируй суда и отправляйся исследовать пространство над облаками.</p></div><i>↗</i></div><div class="feature-item reveal"><span>03</span><div><b>Постройки с экипажем</b><p>Делись проектами, помогай другим и строй рядом с сообществом.</p></div><i>↗</i></div></div></div></section>
 
-            <div class="download-box">
-                <h3>Выберите версию лаунчера</h3>
-                <p>Лаунчер сам установит нужную сборку и подготовит клиент к запуску.</p>
-                
-                <div class="os-card">
-                    <div class="os-info">
-                        <span class="os-icon">🪟</span>
-                        <div>
-                            <strong>Windows</strong>
-                            <p>Для обычных ПК и ноутбуков</p>
-                        </div>
-                    </div>
-                    <!-- Прямая ссылка из GitHub Releases -->
-                    <a href="https://github.com/Astralix-proect/Astralix/releases/download/v1.0.0/AstralixLauncher.exe" class="btn-download" download>Скачать</a>
-                </div>
+    <section class="section wrap" id="gallery">
+      <div class="section-head reveal"><div><p class="section-kicker">03 — ИЗ БОРТОВОГО ЖУРНАЛА</p><h2>Мир в кадре</h2></div><div class="gallery-controls"><span id="gallery-count">01 / 07</span><button class="gallery-arrow" id="gallery-prev" aria-label="Предыдущий скриншот">←</button><button class="gallery-arrow" id="gallery-next" aria-label="Следующий скриншот">→</button></div></div>
+      <div class="gallery-frame reveal"><div class="gallery-track" id="gallery-track">
+        <figure class="gallery-slide active"><img src="2026-08-04_15.36.32.png" alt="Воздушные корабли над поселением" loading="lazy"><figcaption><span>01 / НЕБО</span>Воздушные корабли</figcaption></figure>
+        <figure class="gallery-slide"><img src="2026-08-05_15.36.21.png" alt="Большой мир Minecraft с высоты" loading="lazy"><figcaption><span>02 / МИР</span>Вид с высоты</figcaption></figure>
+        <figure class="gallery-slide"><img src="2026-08-05_17.12.11.png" alt="Инженерная постройка в мире" loading="lazy"><figcaption><span>03 / МЕХАНИЗМЫ</span>Инженерные идеи</figcaption></figure>
+        <figure class="gallery-slide"><img src="2026-08-11_16.13.27.png" alt="Minecraft постройки и фермы" loading="lazy"><figcaption><span>04 / ПОСЕЛЕНИЕ</span>Точка на карте</figcaption></figure>
+        <figure class="gallery-slide"><img src="2026-08-11_16.22.39.png" alt="Пейзаж с воздушным судном" loading="lazy"><figcaption><span>05 / МАРШРУТ</span>На закате</figcaption></figure>
+        <figure class="gallery-slide"><img src="7iThdoO1vkSJXvIbJ7pDxiGKuCxnb2cP1dbIoS09.jpg" alt="Интерьер и механизмы" loading="lazy"><figcaption><span>06 / МАСТЕРСКАЯ</span>Каждая деталь на месте</figcaption></figure>
+        <figure class="gallery-slide"><img src="YASeQLX727CMvRTs5pfYcR5pkfR66Pbaz2L64Hv0.jpg" alt="Игровой мир на сервере" loading="lazy"><figcaption><span>07 / ЭКСПЕДИЦИЯ</span>Дальше — больше</figcaption></figure>
+      </div><div class="gallery-progress"><span id="gallery-progress"></span></div></div>
+      <div class="gallery-dots" id="gallery-dots" aria-label="Выбрать скриншот"></div>
+    </section>
+
+    <section class="rules-section" id="rules">
+      <div class="wrap">
+        <div class="section-head reveal"><div><p class="section-kicker">04 — ПРАВИЛА ПОЛЁТА</p><h2>Чтобы всем было комфортно</h2></div><p>Перед входом ознакомься с правилами. Они действуют на сервере и в сообществе.</p></div>
+        <div class="rules-tools reveal"><label class="rules-search"><span>⌕</span><input id="rules-search" type="search" placeholder="Найти правило: например, «таран»" aria-label="Поиск по правилам"><kbd>CTRL K</kbd></label><span class="rules-hint">Открой раздел, чтобы прочитать</span></div>
+        <div class="rules-list" id="rules-list">
+          <details class="rule-group reveal" open>
+            <summary><span class="rule-index">01</span><span class="rule-summary"><b>Правила сервера</b><small>Общение, спам, реклама и каналы</small></span><span class="rule-toggle">+</span></summary>
+            <div class="rule-content"><div class="rule-note"><b>ЧАТ</b><span>Незнание правил не освобождает от ответственности.</span></div>
+              <h3>1.1. Уважение</h3><p>Без оскорблений, травли, токсичности и перехода на личности — в чате, ЛС и голосовых каналах. Критика по существу разрешена.</p>
+              <h3>1.2. Спам и флуд</h3><p>Запрещены: 2+ одинаковых сообщения подряд, капс длиннее 5 слов, бессмысленный флуд и 3+ эмодзи/гифок/стикеров подряд от одного игрока. Оффтоп — в #флуд.</p>
+              <h3>1.3. Реклама</h3><p>Запрещена реклама сторонних серверов, проектов, каналов и услуг — в любом канале и в ЛС. Упоминание без приглашения рекламой не считается.</p>
+              <h3>1.4. Каналы по назначению</h3><p>Постройки — #творчество. Вопросы по Create — #хелп. Жалобы и апелляции — #тикеты. Сообщение не по теме переносится модератором.</p>
             </div>
+          </details>
+          <details class="rule-group reveal">
+            <summary><span class="rule-index">02</span><span class="rule-summary"><b>Механизмы и аэронавтика</b><small>Безопасность судов, нагрузка и постройки</small></span><span class="rule-toggle">+</span></summary>
+            <div class="rule-content">
+              <h3>2.1. Таран</h3><p>Запрещены намеренные столкновения воздушных судов с чужими базами, постройками и кораблями в мирных зонах. Признаки: курс на чужую постройку, отсутствие торможения, повторные заходы. Авария без умысла — не нарушение, но ущерб компенсирует виновник.</p>
+              <h3>2.2. Нагрузка на сервер</h3><p>Запрещены бесконечно зацикленные кинетические схемы без выключателя. Крупные фабрики и автофермы обязаны иметь аварийное отключение (рычаг / Redstone Link), доступное администрации. Если TPS ниже [15] дольше [5] минут — конструкцию уменьшают или отключают.</p>
+              <h3>2.3. Заброшенные суда</h3><p>Не оставлять зависшие суда над чужими приватами и спавном. Судно заброшено, если владелец не взаимодействовал с ним [14] дней и оно мешает проходу или виду. Удаляется без возврата ресурсов.</p>
+              <h3>2.4. «Потужнолёты»</h3><p>Запрещены летательные аппараты на комбинации физических подшипников (Physics Bearings) и парусов (Sails) для нереалистичной мощности или скорости. Признак: несколько подшипников с парусами в одной силовой схеме. Наказание: разбор аппарата, при повторе — бан [7] дней.</p>
+              <h3>2.5. Чертежи и постройки</h3><p>Запрещено полное копирование чужих уникальных кораблей и заводских схем через Litematica / схемы Create без согласия автора. Полное копирование = совпадение ≥ [80%] блоков или повтор ключевых узлов (силовая схема, обвязка, декор). Вдохновляться и копировать отдельные механизмы — можно, с указанием автора.</p>
+              <h3>2.6. Территория</h3><p>Стройка ближе [50] блоков от чужого привата — только с согласия владельца. Спор решает администрация по логам.</p>
+            </div>
+          </details>
+          <details class="rule-group reveal">
+            <summary><span class="rule-index">03</span><span class="rule-summary"><b>Игра и гриферство</b><small>Честная игра, имущество и эксплойты</small></span><span class="rule-toggle">+</span></summary>
+            <div class="rule-content">
+              <h3>3.1. Честная игра</h3><p>Читы, X-Ray и сторонний софт запрещены. Абуз багов Create / Aeronautics (дюп, бесконечная энергия, обход механик) — <strong>бессрочный бан</strong>. Случайно найденный баг нужно сдать в #тикеты и не повторять.</p>
+              <h3>3.2. Чужое имущество</h3><p>Нельзя ломать чужие фабрики, скручивать механизмы ключом (Wrench) и воровать ресурсы из транспортеров, вагонеток и судов. Воровство фиксируется по логам (/co i), возврат ресурсов обязателен.</p>
+              <h3>3.3. Terrain-grab</h3><p>Запрещён захват чужих построек и ландшафта через Physics Assembler / Honey Glue. Наказание: снос конструкции + бан [3–7] дней.</p>
+              <h3>3.4. Ландшафт</h3><p>Не оставлять висящие кроны деревьев, ямы глубиной [5+] блоков без ограждения и столбы из грязи выше [3] блоков. Модератор вправе потребовать убрать.</p>
+              <h3>3.5. Баги и эксплойты</h3><p>О багах и дюпах — только в #тикеты. Публичное распространение эксплойта — бан [30] дней. Использование в личных целях — <strong>бессрочный бан</strong>.</p>
+            </div>
+          </details>
+          <details class="rule-group reveal">
+            <summary><span class="rule-index">04</span><span class="rule-summary"><b>Запрещённые моды и читы</b><small>Чит-клиенты, автоматизация и фильтр-гард</small></span><span class="rule-toggle">+</span></summary>
+            <div class="rule-content"><div class="rule-note rule-warning"><b>ВАЖНО</b><span>Любое использование — <strong>бан без предупреждения</strong>. Список не закрытый: аналог по функционалу = нарушение.</span></div>
+              <h3>Чит-клиенты и явные читы</h3><p>Wurst, Aristois, Impact, Sigma, Inertia, MeteorClient, ThunderHack, VipClient, LiquidBounce, Mineman, Asterisk, Jello; X-Ray (моды и ресурспаки); Fly; KillAura / AimBot / Reach; Speed / NoFall / Step / Phase / Scaffold; FreeCam; Baritone / Fabaritone; AutoTotem / AutoSwitch / ChestStealer.</p>
+              <h3>Create и Aeronautics</h3><ul><li>Litematica / Schematica с Printer или Easy Place — разрешена только голограмма без автоустановки.</li><li>Create: No Iron Handle — удаляет рецепт железной рукояти.</li><li>Скрипты на бесконечную энергию или дюп внутри Create / Aeronautics.</li><li>Авто-сборка контрапшенов (Assembler-боты).</li><li>Автопилот и автоматическое управление полётом.</li></ul>
+              <h3>Автоматизация</h3><p>AutoFish, AutoFarm, AutoCrop, AutoMine; авто-строители и авто-фермеры; Tweakeroo, ItemSwapper, InvMove, InventoryMove; SeedCracker / SeedChecker; ChestTracker / ChestLocator.</p><p>AutoClicker — только на AFK-фермах (≤ [1] клик/сек, один блок). В PvP, строительстве и бою — бан.</p>
+              <h3>Разрешено</h3><p>Оптимизация (Sodium, Lithium, FerriteCore и аналоги); шейдеры; ресурспаки без X-Ray; миникарта без радара сущностей и игроков; Litematica в режиме голограммы; ReplayMod / FlashBack для записи.</p>
+              <h3>Фильтр-гард: запрещённые функции в контрапшенах</h3><p>Item Drains; Copycats+ (плиты, кнопки); контейнеры с NBT; grass_block / dirt / stone; netherrack; spawner; Mechanical Drill и Hand Crank; Bedrock и админ-блоки; паруса + физические подшипники. Обход фильтра = абуз бага.</p>
+            </div>
+          </details>
+          <details class="rule-group reveal">
+            <summary><span class="rule-index">05</span><span class="rule-summary"><b>Администрация, наказания и определения</b><small>Обращения, апелляции и меры</small></span><span class="rule-toggle">+</span></summary>
+            <div class="rule-content">
+              <h3>5.1. Указания</h3><p>Решения модераторов обязательны к исполнению. Спор — через #тикеты к старшему админу.</p>
+              <h3>5.2. Обращения</h3><p>Жалобы, апелляции и пропажи кораблей из-за багов — только через #тикеты. Жалоба без доказательств (скриншот или видео с датой, /co i, ник, время) не рассматривается.</p>
+              <h3>5.3. Апелляции</h3><p>Одна апелляция за [7] дней с момента наказания. Решение по апелляции окончательное.</p>
+              <h3>Наказания</h3><ul><li>Спам / флуд / капс: предупреждение → мут [1ч] → мут [24ч]</li><li>Оскорбления: мут [24ч] → мут [7д] → бан [30д]</li><li>Реклама: бан [7д] → бан [30д] → бессрочный</li><li>Гриферство / воровство: бан [7д] + возврат → бан [30д] → бессрочный</li><li>Читы / X-Ray / абуз бага: <strong>бессрочный</strong></li><li>«Потужнолёты»: разбор + предупреждение → бан [7д] → бан [30д]</li></ul>
+              <h3>Определения</h3><ul><li><strong>Мирная зона</strong> — спавн и приваты без PvP-флага.</li><li><strong>Абуз бага</strong> — намеренное использование ошибки мода для выгоды, включая обход фильтр-гарда.</li><li><strong>Полное копирование</strong> — совпадение ≥ [80%] блоков или повтор ключевых узлов чужой постройки.</li><li><strong>Terrain-grab</strong> — перемещение чужой постройки или участка ландшафта физической сборкой.</li><li><strong>Заброшенное судно</strong> — аппарат без взаимодействия владельца [14] дней, мешающий проходу или виду.</li></ul>
+            </div>
+          </details>
         </div>
-    </div>
+        <p class="rules-empty" id="rules-empty" hidden>Ничего не найдено. Попробуй изменить запрос.</p>
+        <p class="rules-contact">Остались вопросы или нужно подать апелляцию? <a href="https://discord.gg/WbsCtNXwtd" target="_blank" rel="noopener noreferrer">Напиши администрации в Discord ↗</a></p>
+      </div>
+    </section>
 
-    <!-- Модалка: ЧаВо -->
-    <div id="faq-modal" class="modal-overlay">
-        <div class="modal-card">
-            <button class="modal-close" onclick="closeModal('faq-modal')">✕</button>
-            <h2 class="modal-title">❓ Часто задаваемые вопросы</h2>
-            <div class="modal-body">
-                <p><strong>Какой IP у сервера?</strong><br><code style="color: #b9eaff;">d4.rionix.cloud:25043</code></p><br>
-                <p><strong>Нужна ли лицензия?</strong><br>Играть можно как с лицензии, так и с пиратки через наш лаунчер из Discord.</p><br>
-                <p><strong>Какая версия сборки?</strong><br>Сервер работает на NeoForge 1.21.1 с Create & Aeronautics.</p>
-            </div>
-        </div>
-    </div>
+    <section class="section wrap faq-section" id="faq">
+      <div class="section-head reveal"><div><p class="section-kicker">05 — НА БОРТУ</p><h2>Частые вопросы</h2></div><p>Короткие ответы перед стартом.</p></div>
+      <div class="faq-grid reveal">
+        <details class="faq-item"><summary>Какой адрес вводить?<span>+</span></summary><p>Основной адрес: <code>-ᴋɢ-ʙsᴢ02.ᴀʟᴛᴀʀᴇ.ɢʟᴏʙᴀʟ:25000</code>. Есть и короткий альтернативный адрес в блоке подключения.</p></details>
+        <details class="faq-item"><summary>Какая версия игры нужна?<span>+</span></summary><p>Minecraft Java Edition 1.21.1 и NeoForge. Состав сборки и помощь с установкой доступны в Discord.</p></details>
+        <details class="faq-item"><summary>Где спросить о модах или пропаже судна?<span>+</span></summary><p>Зайди в Discord Aeronauttik и создай обращение в тикеты. Для жалобы приложи доказательства и данные из правил.</p></details>
+        <details class="faq-item"><summary>Где посмотреть правила?<span>+</span></summary><p>Все пять разделов находятся на этой странице. Используй поиск по правилам, чтобы быстро найти нужный пункт.</p></details>
+      </div>
+      <div class="discord-cta reveal"><div class="discord-mark">⌁</div><div><small>СООБЩЕСТВО И ПОДДЕРЖКА</small><h3>Увидимся в Discord</h3></div><a class="button button-primary" href="https://discord.gg/WbsCtNXwtd" target="_blank" rel="noopener noreferrer">Присоединиться ↗</a></div>
+    </section>
+  </main>
 
-    <!-- Модальное окно просмотра увеличенного фото -->
-    <div id="image-modal" class="modal-overlay" onclick="closeModal('image-modal')">
-        <div class="image-modal-content" onclick="event.stopPropagation()">
-            <button class="modal-close" onclick="closeModal('image-modal')">✕</button>
-            <img id="zoomed-image" src="" alt="Увеличенный скриншот">
-        </div>
-    </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <footer class="site-footer"><div class="wrap footer-inner"><a class="brand footer-brand" href="#top"><img src="aeronauttik-avatar.png" alt="" class="brand-mark"><span>ᴀᴇʀᴏɴᴀꜰꜰᴛɪᴋ</span></a><p>Minecraft — игра Mojang Studios. Этот сервер не связан с Mojang или Microsoft.</p><a href="#top" class="to-top">НАВЕРХ ↑</a></div></footer>
 
-    <footer class="site-footer">
-        <p>&copy; 2026 Astralix. Все права защищены. Сайт не связан с Mojang AB.</p>
-    </footer>
+  <script>
+    const SERVER = {
+      primary: '-ᴋɢ-ʙsᴢ02.ᴀʟᴛᴀʀᴇ.ɢʟᴏʙᴀʟ:25000',
+      pretty: 'ᴀᴇʀᴏɴᴀꜰꜰᴛɪᴋ.xᴜʙɪ.ᴏʀɢ',
+      statusHost: '-ᴋɢ-ʙsᴢ02.ᴀʟᴛᴀʀᴇ.ɢʟᴏʙᴀʟ:25000'
+    };
 
-    <!-- Основные скрипты -->
-    <script>
-        function openModal(id) {
-            document.getElementById(id).classList.add('active');
-        }
+    const toast = document.getElementById('toast');
+    let toastTimer;
+    function showToast(message) {
+      toast.textContent = message;
+      toast.classList.add('visible');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => toast.classList.remove('visible'), 2400);
+    }
+    async function copyText(text) {
+      try {
+        await navigator.clipboard.writeText(text);
+      } catch {
+        const field = document.createElement('textarea');
+        field.value = text;
+        field.style.position = 'fixed'; field.style.opacity = '0';
+        document.body.appendChild(field); field.select(); document.execCommand('copy'); field.remove();
+      }
+      showToast('Адрес скопирован: ' + text);
+    }
+    document.querySelectorAll('[data-copy]').forEach(button => {
+      button.addEventListener('click', () => copyText(SERVER[button.dataset.copy]));
+    });
 
-        function closeModal(id) {
-            document.getElementById(id).classList.remove('active');
-        }
+    const menuToggle = document.getElementById('menu-toggle');
+    const mainNav = document.getElementById('main-nav');
+    menuToggle.addEventListener('click', () => {
+      const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
+      menuToggle.setAttribute('aria-expanded', String(!isOpen));
+      mainNav.classList.toggle('open', !isOpen);
+    });
+    mainNav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      mainNav.classList.remove('open'); menuToggle.setAttribute('aria-expanded', 'false');
+    }));
 
-        function scrollToCard() {
-            document.getElementById('servers-section').scrollIntoView({ behavior: 'smooth' });
-        }
+    const slides = [...document.querySelectorAll('.gallery-slide')];
+    const dotsHost = document.getElementById('gallery-dots');
+    const progress = document.getElementById('gallery-progress');
+    const count = document.getElementById('gallery-count');
+    let currentSlide = 0;
+    slides.forEach((_, index) => {
+      const dot = document.createElement('button');
+      dot.className = 'gallery-dot' + (index === 0 ? ' active' : '');
+      dot.type = 'button'; dot.setAttribute('aria-label', `Показать скриншот ${index + 1}`);
+      dot.addEventListener('click', () => showSlide(index)); dotsHost.appendChild(dot);
+    });
+    function showSlide(index) {
+      currentSlide = (index + slides.length) % slides.length;
+      slides.forEach((slide, i) => slide.classList.toggle('active', i === currentSlide));
+      [...dotsHost.children].forEach((dot, i) => dot.classList.toggle('active', i === currentSlide));
+      count.textContent = `${String(currentSlide + 1).padStart(2, '0')} / ${String(slides.length).padStart(2, '0')}`;
+      progress.style.width = `${((currentSlide + 1) / slides.length) * 100}%`;
+    }
+    document.getElementById('gallery-prev').addEventListener('click', () => showSlide(currentSlide - 1));
+    document.getElementById('gallery-next').addEventListener('click', () => showSlide(currentSlide + 1));
+    const gallery = document.querySelector('.gallery-frame');
+    let touchStart = 0;
+    gallery.addEventListener('touchstart', event => touchStart = event.changedTouches[0].screenX, {passive: true});
+    gallery.addEventListener('touchend', event => {
+      const delta = event.changedTouches[0].screenX - touchStart;
+      if (Math.abs(delta) > 45) showSlide(currentSlide + (delta < 0 ? 1 : -1));
+    }, {passive: true});
+    showSlide(0);
 
-        function copyIp() {
-            navigator.clipboard.writeText("d4.rionix.cloud:25043");
-            alert("Адрес d4.rionix.cloud:25043 скопирован!");
-        }
+    const ruleSearch = document.getElementById('rules-search');
+    const ruleGroups = [...document.querySelectorAll('.rule-group')];
+    ruleSearch.addEventListener('input', () => {
+      const term = ruleSearch.value.trim().toLocaleLowerCase('ru');
+      let visibleCount = 0;
+      ruleGroups.forEach(group => {
+        const match = group.textContent.toLocaleLowerCase('ru').includes(term);
+        group.hidden = !match;
+        if (match) visibleCount += 1;
+        if (term && match) group.open = true;
+      });
+      document.getElementById('rules-empty').hidden = visibleCount > 0;
+    });
+    document.addEventListener('keydown', event => {
+      if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 'k') {
+        event.preventDefault(); document.getElementById('rules').scrollIntoView({behavior: 'smooth'}); ruleSearch.focus();
+      }
+      if (event.key === 'Escape') { mainNav.classList.remove('open'); menuToggle.setAttribute('aria-expanded', 'false'); }
+      if (event.key === 'ArrowLeft' && document.activeElement.tagName !== 'INPUT') showSlide(currentSlide - 1);
+      if (event.key === 'ArrowRight' && document.activeElement.tagName !== 'INPUT') showSlide(currentSlide + 1);
+    });
 
-        window.onclick = function(e) {
-            if (e.target.classList.contains('modal-overlay')) {
-                e.target.classList.remove('active');
-            }
-        }
+    const revealObserver = new IntersectionObserver(entries => entries.forEach(entry => {
+      if (entry.isIntersecting) { entry.target.classList.add('is-visible'); revealObserver.unobserve(entry.target); }
+    }), {threshold: 0.12});
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-        // Слайдер скриншотов
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.slide');
-        const dots = document.querySelectorAll('.dot-item');
-
-        function showSlide(index) {
-            slides.forEach(slide => slide.classList.remove('active'));
-            dots.forEach(dot => dot.classList.remove('active'));
-
-            if (index >= slides.length) currentSlide = 0;
-            if (index < 0) currentSlide = slides.length - 1;
-
-            slides[currentSlide].classList.add('active');
-            if (dots[currentSlide]) {
-                dots[currentSlide].classList.add('active');
-            }
-        }
-
-        function moveSlide(step) {
-            currentSlide += step;
-            showSlide(currentSlide);
-        }
-
-        function setSlide(index) {
-            currentSlide = index;
-            showSlide(currentSlide);
-        }
-
-        // Приближение текущего просматриваемого скриншота
-        function zoomCurrentSlide() {
-            const activeImg = slides[currentSlide].querySelector('img');
-            if (activeImg) {
-                document.getElementById('zoomed-image').src = activeImg.src;
-                openModal('image-modal');
-            }
-        }
-
-        // Мониторинг статуса сервера
-        async function checkServerStatus() {
-            const topOnlineDot = document.getElementById('top-online-dot');
-            const topOnlineText = document.getElementById('top-online-text');
-            const heroOnlineCount = document.getElementById('hero-online-count');
-            const heroOnlineLabel = document.getElementById('hero-online-label');
-            const cardOnlineText = document.getElementById('card-online-text');
-
-            const serverIp = "d4.rionix.cloud:25043";
-
-            try {
-                const response = await fetch(`https://api.mcstatus.io/v2/status/java/${serverIp}`);
-                if (!response.ok) throw new Error('Ошибка связи с API');
-                const data = await response.json();
-
-                if (data && data.online === true) {
-                    const online = data.players ? data.players.online : 0;
-                    const maxOnline = data.players ? data.players.max : 50;
-
-                    topOnlineDot.classList.remove('offline');
-                    topOnlineText.textContent = `${online} игроков онлайн`;
-                    heroOnlineCount.textContent = online;
-                    heroOnlineLabel.textContent = 'Игроков онлайн';
-                    cardOnlineText.textContent = `${online} / ${maxOnline} игроков`;
-                } else {
-                    setOffline();
-                }
-            } catch (err) {
-                setOffline();
-            }
-
-            function setOffline() {
-                topOnlineDot.classList.add('offline');
-                topOnlineText.textContent = 'Сервер оффлайн';
-                heroOnlineCount.textContent = 'ОФФЛАЙН';
-                heroOnlineLabel.textContent = 'Статус сервера';
-                cardOnlineText.textContent = 'Сервер оффлайн';
-            }
-        }
-
-        checkServerStatus();
-        setInterval(checkServerStatus, 30000);
-    </script>
+    async function checkServerStatus() {
+      const dots = [document.getElementById('status-dot'), document.getElementById('panel-status-dot')];
+      const short = document.getElementById('status-short');
+      const panel = document.getElementById('panel-status');
+      const countNode = document.getElementById('hero-online-count');
+      const label = document.getElementById('hero-online-label');
+      try {
+        const response = await fetch(`https://api.mcstatus.io/v2/status/java/${encodeURIComponent(SERVER.statusHost)}`, {cache: 'no-store'});
+        if (!response.ok) throw new Error('status unavailable');
+        const data = await response.json();
+        if (!data.online) throw new Error('server offline');
+        dots.forEach(dot => dot.classList.remove('is-offline'));
+        short.textContent = 'Онлайн'; panel.textContent = `${data.players?.online ?? 0} игроков онлайн`;
+        countNode.textContent = data.players?.online ?? 0; label.textContent = `из ${data.players?.max ?? '—'} игроков онлайн`;
+      } catch {
+        dots.forEach(dot => dot.classList.add('is-offline'));
+        short.textContent = 'Нет ответа'; panel.textContent = 'Не удалось проверить статус';
+        countNode.textContent = '—'; label.textContent = 'статус временно недоступен';
+      }
+    }
+    checkServerStatus();
+    setInterval(checkServerStatus, 60000);
+  </script>
 </body>
 </html>
