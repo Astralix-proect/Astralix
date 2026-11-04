@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Astralix — сервер по маинкрафту с модом Create</title>
-    <meta name="description" content="Astralix — уникальный сервер по маинкрафту с модом Create Aeronautics! Автоматизация, дирижабли и комфортное выживание.">
+    <title>Astralix Aeronautics — инженерия начинается в небе</title>
+    <meta name="description" content="Astralix Aeronautics — Minecraft-сервер для инженерных идей, воздушных кораблей и совместных проектов.">
 
     <!-- Иконка сайта (Favicon) -->
     <link rel="icon" type="image/png" href="favicon.png">
@@ -16,6 +16,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <meta name="theme-color" content="#07121f">
 </head>
 <body>
 
@@ -32,130 +33,85 @@
                 <span class="dot" id="top-online-dot"></span> <span id="top-online-text">Проверка статуса...</span>
             </div>
             <nav class="nav-menu">
-                <button class="nav-btn active">🏠 Главная</button>
-                <button class="nav-btn" onclick="scrollToCard()">🖥️ Сервера</button>
-                <button class="nav-btn" onclick="openModal('play-modal')">🎮 Начать играть</button>
-                <button class="nav-btn" onclick="openModal('rules-modal')">📜 Правила</button>
-                <button class="nav-btn" onclick="openModal('faq-modal')">❓ ЧаВо</button>
+                <button class="nav-btn active" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">Главная</button>
+                <button class="nav-btn" onclick="scrollToCard()">Сервер</button>
+                <button class="nav-btn" onclick="openModal('play-modal')">Как начать</button>
+                <button class="nav-btn" onclick="openModal('rules-modal')">Правила</button>
+                <button class="nav-btn" onclick="openModal('faq-modal')">FAQ</button>
             </nav>
         </div>
     </header>
 
     <!-- Основной контент -->
     <main class="main-container">
-        
-        <section class="hero-section">
-            <div class="badge-glow">
-                <span class="badge-dot"></span> Игровой сервер нового поколения
-            </div>
-            <h1 class="brand-title">ASTRALIX</h1>
-            <p class="hero-description">
-                Мы сделали этот проект, чтобы играть было по-настоящему уютно, а творческие и инженерные идеи легко оживали.
-            </p>
-            
-            <div class="hero-actions">
-                <button class="btn-play-now" onclick="openModal('play-modal')">🎮 Начать играть</button>
-                <button class="btn-secondary-action" onclick="openModal('rules-modal')">📜 Изучить правила</button>
-            </div>
-
-            <!-- Статистика -->
-            <div class="stats-container">
-                <div class="stat-box">
-                    <span class="stat-number">1</span>
-                    <span class="stat-label">Сервер</span>
+        <section class="hero-section" aria-labelledby="hero-title">
+            <div class="hero-grid">
+                <div class="hero-copy">
+                    <div class="badge-glow"><span class="badge-dot"></span> Мир Create &amp; Aeronautics</div>
+                    <h1 class="brand-title" id="hero-title">ASTRALIX</h1>
+                    <span class="brand-kicker">Engineering beyond the horizon</span>
+                    <p class="hero-description">Собирай механизмы, прокладывай маршруты и поднимай свои идеи выше облаков — вместе с дружным сообществом инженеров.</p>
+                    <div class="hero-actions">
+                        <button class="btn-play-now" onclick="openModal('play-modal')">Начать приключение <span aria-hidden="true">↗</span></button>
+                        <button class="btn-secondary-action" onclick="scrollToCard()">О сервере <span aria-hidden="true">↓</span></button>
+                    </div>
                 </div>
-                <div class="stat-box">
-                    <span class="stat-number" id="hero-online-count">--</span>
-                    <span class="stat-label" id="hero-online-label">Игроков онлайн</span>
+                <div class="hero-visual" role="img" aria-label="Воздушные корабли и летающие острова в мире Astralix">
+                    <div class="visual-caption">
+                        <div><strong>Открытое небо. Большие идеи.</strong><span>Создавай, исследуй, лети дальше.</span></div>
+                        <span class="visual-coordinates">52° 31' N&nbsp;&nbsp; 13° 24' E</span>
+                    </div>
                 </div>
             </div>
 
-            <!-- Карточка сервера на главной -->
+            <div class="stats-container" aria-label="Статистика сервера">
+                <div class="stat-box"><span class="stat-number">1.21.1</span><span class="stat-label">Версия мира</span></div>
+                <div class="stat-box"><span class="stat-number" id="hero-online-count">--</span><span class="stat-label" id="hero-online-label">Игроков онлайн</span></div>
+            </div>
+
             <div class="server-card-main" id="servers-section">
                 <div class="server-card">
-                    <div class="card-banner" style="background-image: linear-gradient(180deg, rgba(10, 12, 20, 0.2) 0%, rgba(10, 12, 20, 0.85) 100%), url('bg.png');">
-                        <div class="card-icon-frame">
-                            <img src="favicon.png" alt="Astralix Logo">
-                        </div>
+                    <div class="card-banner" style="background-image: linear-gradient(180deg, rgba(6, 18, 31, 0.04), rgba(6, 18, 31, 0.35)), url('bg.png');">
+                        <div class="card-icon-frame"><img src="favicon.png" alt="Логотип Astralix"></div>
                     </div>
                     <div class="card-body">
-                        <h2 class="server-title">Create Aeronautics | Astralix World</h2>
-                        <p class="server-desc">
-                            Create Aeronautics — это мод, которого ждали 5 лет! Полный эффект Scrap Mechanic в Minecraft. Полноценное воздухоплавание, поезда, сложные физические механизмы и масштабная автоматизация.
-                        </p>
+                        <div class="section-eyebrow">Точка отправления</div>
+                        <h2 class="server-title">Create Aeronautics<br>на Astralix</h2>
+                        <p class="server-desc">Инженерная песочница, в которой механизмы обретают движение, а небо становится частью твоего мира. Строй в своём темпе и делись открытиями с другими.</p>
                         <div class="tags-list">
-                            <span class="tag">⚙️ Create</span>
-                            <span class="tag">✈️ Aeronautics</span>
-                            <span class="tag">📷 Exposure</span>
-                            <span class="tag">🚂 Interactive Trains</span>
+                            <span class="tag">Create</span><span class="tag">Aeronautics</span><span class="tag">Совместное строительство</span>
                         </div>
                         <div class="server-info">
-                            <div class="info-row">
-                                <span>Онлайн:</span>
-                                <strong id="card-online-text">Проверка...</strong>
-                            </div>
-                            <div class="info-row">
-                                <span>IP Адрес:</span>
-                                <strong class="ip-address" onclick="copyIp()" title="Нажмите, чтобы скопировать">Astralix.xubi.org</strong>
-                            </div>
-                            <div class="info-row">
-                                <span>Версия ядра:</span>
-                                <span class="version-badge">NeoForge 1.21.1</span>
-                            </div>
+                            <div class="info-row"><span>Статус</span><strong id="card-online-text">Проверяем соединение...</strong></div>
+                            <div class="info-row"><span>Адрес</span><strong class="ip-address" onclick="copyIp()" title="Нажмите, чтобы скопировать" role="button" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') copyIp()">d4.rionix.cloud:25043</strong></div>
+                            <div class="info-row"><span>Загрузчик</span><span class="version-badge">NeoForge 1.21.1</span></div>
                         </div>
-                        <button class="btn-more" onclick="openModal('play-modal')">Присоединиться к серверу ➔</button>
+                        <button class="btn-more" onclick="openModal('play-modal')">Как подключиться <span aria-hidden="true">→</span></button>
                     </div>
                 </div>
             </div>
 
-            <!-- Галерея скриншотов -->
             <div class="screenshots-section">
-                <h2 class="screenshots-title">Скриншоты</h2>
+                <div class="section-heading"><div><div class="section-eyebrow">Взгляд изнутри</div><h2 class="screenshots-title">Мир в кадре</h2></div><p class="section-note">Несколько мгновений из жизни мира — листай и вдохновляйся.</p></div>
                 <div class="slider-card">
                     <div class="slider-viewport">
-                        <div class="slide active">
-                            <img src="2026-08-04_15.36.32.png" alt="Скриншот 1" onclick="zoomCurrentSlide()">
-                        </div>
-                        <div class="slide">
-                            <img src="2026-08-05_15.36.21.png" alt="Скриншот 2" onclick="zoomCurrentSlide()">
-                        </div>
-                        <div class="slide">
-                            <img src="2026-08-05_17.12.11.png" alt="Скриншот 3" onclick="zoomCurrentSlide()">
-                        </div>
-                        <div class="slide">
-                            <img src="2026-08-11_16.13.27.png" alt="Скриншот 4" onclick="zoomCurrentSlide()">
-                        </div>
-                        <div class="slide">
-                            <img src="2026-08-11_16.22.39.png" alt="Скриншот 5" onclick="zoomCurrentSlide()">
-                        </div>
-                        <div class="slide">
-                            <img src="7iThdoO1vkSJXvIbJ7pDxiGKuCxnb2cP1dbIoS09.png" alt="Скриншот 6" onclick="zoomCurrentSlide()">
-                        </div>
-                        <div class="slide">
-                            <img src="YASeQLX727CMvRTs5pfYcR5pkfR66Pbaz2L64Hv0.png" alt="Скриншот 7" onclick="zoomCurrentSlide()">
-                        </div>
-
-                        <!-- Кнопка приближения текущего скриншота -->
-                        <button class="zoom-trigger-btn" onclick="zoomCurrentSlide()">🔍 Увеличить</button>
-
-                        <button class="slider-btn prev" onclick="moveSlide(-1)">❮</button>
-                        <button class="slider-btn next" onclick="moveSlide(1)">❯</button>
+                        <div class="slide active"><img src="2026-08-04_15.36.32.png" alt="Постройки в мире Astralix" onclick="zoomCurrentSlide()"></div>
+                        <div class="slide"><img src="2026-08-05_15.36.21.png" alt="Пейзаж сервера Astralix" onclick="zoomCurrentSlide()"></div>
+                        <div class="slide"><img src="2026-08-05_17.12.11.png" alt="Инженерные постройки в Minecraft" onclick="zoomCurrentSlide()"></div>
+                        <div class="slide"><img src="2026-08-11_16.13.27.png" alt="Мир Astralix с высоты" onclick="zoomCurrentSlide()"></div>
+                        <div class="slide"><img src="2026-08-11_16.22.39.png" alt="Игровая постройка Astralix" onclick="zoomCurrentSlide()"></div>
+                        <div class="slide"><img src="7iThdoO1vkSJXvIbJ7pDxiGKuCxnb2cP1dbIoS09.jpg" alt="Скриншот игрового мира" onclick="zoomCurrentSlide()"></div>
+                        <div class="slide"><img src="YASeQLX727CMvRTs5pfYcR5pkfR66Pbaz2L64Hv0.jpg" alt="Скриншот сервера Astralix" onclick="zoomCurrentSlide()"></div>
+                        <button class="zoom-trigger-btn" onclick="zoomCurrentSlide()">Увеличить</button>
+                        <button class="slider-btn prev" aria-label="Предыдущий скриншот" onclick="moveSlide(-1)">❮</button>
+                        <button class="slider-btn next" aria-label="Следующий скриншот" onclick="moveSlide(1)">❯</button>
                     </div>
-
-                    <!-- Точки переключения слайдов (пагинация) -->
-                    <div class="slider-dots" id="slider-dots">
-                        <span class="dot-item active" onclick="setSlide(0)"></span>
-                        <span class="dot-item" onclick="setSlide(1)"></span>
-                        <span class="dot-item" onclick="setSlide(2)"></span>
-                        <span class="dot-item" onclick="setSlide(3)"></span>
-                        <span class="dot-item" onclick="setSlide(4)"></span>
-                        <span class="dot-item" onclick="setSlide(5)"></span>
-                        <span class="dot-item" onclick="setSlide(6)"></span>
+                    <div class="slider-dots" id="slider-dots" aria-label="Выбрать скриншот">
+                        <button class="dot-item active" aria-label="Скриншот 1" onclick="setSlide(0)"></button><button class="dot-item" aria-label="Скриншот 2" onclick="setSlide(1)"></button><button class="dot-item" aria-label="Скриншот 3" onclick="setSlide(2)"></button><button class="dot-item" aria-label="Скриншот 4" onclick="setSlide(3)"></button><button class="dot-item" aria-label="Скриншот 5" onclick="setSlide(4)"></button><button class="dot-item" aria-label="Скриншот 6" onclick="setSlide(5)"></button><button class="dot-item" aria-label="Скриншот 7" onclick="setSlide(6)"></button>
                     </div>
                 </div>
             </div>
         </section>
-
     </main>
 
     <!-- Плавающая кнопка Поддержка -->
@@ -283,9 +239,9 @@
             <button class="modal-close" onclick="closeModal('faq-modal')">✕</button>
             <h2 class="modal-title">❓ Часто задаваемые вопросы</h2>
             <div class="modal-body">
-                <p><strong>Какой IP у сервера?</strong><br><code style="color: #c084fc;">d4.rionix.cloud:25043</code></p><br>
+                <p><strong>Какой IP у сервера?</strong><br><code style="color: #b9eaff;">d4.rionix.cloud:25043</code></p><br>
                 <p><strong>Нужна ли лицензия?</strong><br>Играть можно как с лицензии, так и с пиратки через наш лаунчер из Discord.</p><br>
-                <p><strong>Какая версия сборки?</strong><br>Сборка работает на NeoForge 1.21.1 (Create & Aeronautics).</p>
+                <p><strong>Какая версия сборки?</strong><br>Сервер работает на NeoForge 1.21.1 с Create & Aeronautics.</p>
             </div>
         </div>
     </div>
@@ -317,8 +273,8 @@
         }
 
         function copyIp() {
-            navigator.clipboard.writeText("Astralix.minerent.io");
-            alert("IP адрес Astralix.minerent.io скопирован!");
+            navigator.clipboard.writeText("d4.rionix.cloud:25043");
+            alert("Адрес d4.rionix.cloud:25043 скопирован!");
         }
 
         window.onclick = function(e) {
@@ -405,7 +361,7 @@
         }
 
         checkServerStatus();
-        setInterval(checkServerStatus, 1000);
+        setInterval(checkServerStatus, 30000);
     </script>
 </body>
 </html>
